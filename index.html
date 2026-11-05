@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f8f9fe"><title>Free Online PDF, Image &amp; OCR Tools | SnapText Studio</title><meta name="description" content="Convert, edit, scan and organize PDFs and images with browser-based tools. Extract text, merge PDFs, convert images and more with SnapText Studio."><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:title" content="Free Online PDF, Image &amp; OCR Tools | SnapText Studio"><meta property="og:description" content="Convert, edit, scan and organize PDFs and images with browser-based tools. Extract text, merge PDFs, convert images and more with SnapText Studio."><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/app.css"><script defer src="https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script><script defer src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script><script defer src="https://unpkg.com/docx@8.5.0/build/index.umd.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css"></head><body><div class="app-shell"><header class="topbar"><a class="brand" id="logoHome" href="index.html" aria-label="SnapText Studio home"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 4.75h10.5L25 11.2v15.05A2.75 2.75 0 0 1 22.25 29h-14.5A2.75 2.75 0 0 1 5 26.25V7.5a2.75 2.75 0 0 1 3-2.75Z" stroke="white" stroke-width="2" fill="none"/><path d="M18 5v6.5h6.5M10 17h12M10 21h12M10 25h7" stroke="white" stroke-width="2" fill="none"/></svg></span><span class="brand-name">snaptext<span>studio</span></span></a><nav class="nav-desktop" aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a><a href="index.html#tools" >All tools</a><a href="tools/image-to-text/index.html">Image to text</a><a href="articles/index.html" >Guides</a></nav><div class="topbar-right"><span class="privacy-pill"><span class="privacy-dot"></span> Browser-based</span><a class="btn nav-cta" id="navToolsBtn" href="index.html#tools">Explore tools ↗</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light or dark theme" title="Toggle theme"><svg id="themeIcon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg></button></div></header><main class="page-body"><section class="hero-new"><div><span class="eyebrow-new">Your all-in-one document workspace</span><h1>Every document task. <em>Beautifully simple.</em></h1><p>Convert PDFs, extract text, edit images and organize files in one thoughtfully designed toolkit. No complicated setup — just choose a tool and get things done.</p><div class="hero-actions"><a class="btn btn-main" href="#tools">Explore 12 tools <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#ocr">Start with OCR</a></div><div class="trust-row"><span><i>✦</i> Made for everyday work</span><span><i>✓</i> No account required</span><span><i>▣</i> Browser-based tools</span></div></div><img class="hero-art" src="assets/hero-studio.svg" alt="Illustration of PDF, images and text documents in a workspace" width="720" height="540"></section><aside class="ad-placement ad-placement--wide" aria-label="Reserved advertisement space" data-ad-placement="home_leaderboard"><span class="ad-label">Advertisement</span><div class="ad-reserved"><strong>Ad space reserved</strong><span>For future display advertising</span></div></aside><section class="home-workspace"><div class="section-heading"><div><span class="kicker">SIGNATURE WORKSPACE</span><h2>From image to editable text.</h2><p>Drop in a screenshot, photo or scan. Extract the words, make them yours, and export.</p></div><a class="section-link" href="tools/image-to-text/index.html">Full OCR guide ↗</a></div><section aria-label="Image to text workspace" class="workspace" id="ocr">
+<div class="workspace-heading">
+<div>
+<div class="section-kicker">WORKSPACE</div>
+<h2>Let's get your text</h2>
+</div>
+<button class="reset-button" id="resetBtn" type="button">
+<svg aria-hidden="true" viewbox="0 0 20 20"><path d="M3.5 5.5h13M8 5.5V3.8h4v1.7m3.1 0-.6 10.2a1.5 1.5 0 0 1-1.5 1.4H7a1.5 1.5 0 0 1-1.5-1.4L4.9 5.5M8 8.5v5.3m4-5.3v5.3"></path></svg>
+            Start over
+          </button>
+</div>
+<div class="workspace-grid">
+<!-- Source panel -->
+<section aria-labelledby="sourceTitle" class="panel source-panel">
+<div class="panel-heading">
+<div class="panel-title-wrap">
+<span class="step-number">01</span>
+<div><h3 id="sourceTitle">Add a screenshot</h3><p>Upload, paste, or capture your screen.</p></div>
+</div>
+<span class="panel-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="16" rx="2.5" width="17" x="3.5" y="4"></rect><circle cx="8.5" cy="9" r="1.5"></circle><path d="m5 17 5-5 3 3 2-2 4 4"></path></svg></span>
+</div>
+<div aria-label="Choose an image or drop it here" class="dropzone" id="dropzone" role="button" tabindex="0">
+<input accept="image/*" hidden="" id="imageInput" type="file"/>
+<div class="upload-symbol"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M16 21V5m0 0-6 6m6-6 6 6"></path><path d="M6 19v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6"></path></svg></div>
+<div class="drop-title">Drop your image here</div>
+<div class="drop-subtitle">or <button class="inline-link" id="browseBtn" type="button">browse files</button></div>
+<div class="file-hint">PNG, JPG, WEBP, BMP · Up to 20 MB</div>
+</div>
+<div class="source-actions">
+<button class="secondary-button" id="pasteBtn" type="button">
+<svg aria-hidden="true" viewbox="0 0 20 20"><rect height="12" rx="1.5" width="10" x="5.5" y="5.5"></rect><path d="M8 5.5V4.2A1.2 1.2 0 0 1 9.2 3h2.6A1.2 1.2 0 0 1 13 4.2v1.3M8 10h5m-5 3h5"></path></svg>
+                Paste image
+              </button>
+<button class="secondary-button" id="captureBtn" type="button">
+<svg aria-hidden="true" viewbox="0 0 20 20"><rect height="11" rx="2" width="15" x="2.5" y="4"></rect><path d="m7 17 3-2 3 2M7.5 9.5h5"></path></svg>
+                Capture screen
+              </button>
+</div>
+<div class="preview-wrap hidden" id="previewWrap">
+<div class="preview-topline">
+<div><span class="ready-dot"></span><span id="fileName">Image ready</span></div>
+<button aria-label="Remove image" class="icon-button" id="removeImageBtn" title="Remove image" type="button">×</button>
+</div>
+<div class="image-preview"><img alt="Selected screenshot preview" id="imagePreview"/></div>
+<div class="file-meta"><span id="fileMeta">—</span><span class="file-ready">Ready for OCR</span></div>
+</div>
+<div class="settings-block">
+<div class="setting-label">TEXT RECOGNITION SETTINGS</div>
+<label class="field-label" for="languageSelect">Text language</label>
+<div class="select-wrap">
+<select id="languageSelect">
+<option value="eng">English</option>
+<option value="eng+urd">English + Urdu</option>
+<option value="urd">Urdu</option>
+<option value="ara">Arabic</option>
+<option value="hin">Hindi</option>
+<option value="spa">Spanish</option>
+<option value="fra">French</option>
+<option value="deu">German</option>
+</select>
+<svg aria-hidden="true" viewbox="0 0 16 16"><path d="m4 6 4 4 4-4"></path></svg>
+</div>
+<label class="enhance-option">
+<input checked="" id="enhanceToggle" type="checkbox"/>
+<span class="custom-check"><svg viewbox="0 0 16 16"><path d="m3 8 3 3 7-7"></path></svg></span>
+<span><strong>Improve image for better results</strong><small>Light contrast and sharpness adjustment</small></span>
+</label>
+<button class="primary-button ocr-button" disabled="" id="ocrBtn" type="button">
+<span class="button-icon"><svg aria-hidden="true" viewbox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"></circle><path d="m13 13 4 4M6 8.5h5M8.5 6v5"></path></svg></span>
+<span id="ocrBtnText">Extract text from image</span>
+<span class="button-arrow">→</span>
+</button>
+<div class="progress-wrap hidden" id="progressWrap">
+<div class="progress-top"><span id="progressLabel">Preparing OCR engine…</span><span id="progressPercent">0%</span></div>
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+</div>
+<p class="privacy-note"><svg aria-hidden="true" viewbox="0 0 16 16"><rect height="7" rx="1.5" width="9" x="3.5" y="7"></rect><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"></path></svg> Your image is processed in your browser. It is not uploaded to our server.</p>
+</div>
+</section>
+<!-- Text panel -->
+<section aria-labelledby="textTitle" class="panel text-panel">
+<div class="panel-heading">
+<div class="panel-title-wrap">
+<span class="step-number">02</span>
+<div><h3 id="textTitle">Your extracted text</h3><p>Review it, edit it, then export.</p></div>
+</div>
+<span class="panel-icon text-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 4.5h10a2 2 0 0 1 2 2v13h-14v-13a2 2 0 0 1 2-2Z"></path><path d="M8 9h8M8 13h8M8 17h5"></path></svg></span>
+</div>
+<div class="editor-toolbar">
+<span class="editor-status" id="editorStatus"><span class="status-dot"></span> Waiting for an image</span>
+<div class="toolbar-actions">
+<button class="tool-button" disabled="" id="cleanTextBtn" type="button"><svg aria-hidden="true" viewbox="0 0 18 18"><path d="M3 5h12M5 9h8M7 13h4"></path><path d="m13.5 11.5 1 1 2-2"></path></svg> Clean</button>
+<button class="tool-button" disabled="" id="copyBtn" type="button"><svg aria-hidden="true" viewbox="0 0 18 18"><rect height="10" rx="1.5" width="8.5" x="6" y="5.5"></rect><path d="M11.5 5.5V4A1.5 1.5 0 0 0 10 2.5H4A1.5 1.5 0 0 0 2.5 4v8A1.5 1.5 0 0 0 4 13.5h2"></path></svg> Copy</button>
+<button class="tool-button" disabled="" id="downloadTxtBtn" type="button"><svg aria-hidden="true" viewbox="0 0 18 18"><path d="M9 2.5v9m0 0 3.5-3.5M9 11.5 5.5 8M3 13v2a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5v-2"></path></svg> .TXT</button>
+</div>
+</div>
+<div class="editor-wrap">
+<textarea a="" aria-label="Editable extracted text" as="" edit="" export="" extract="" here,="" id="textOutput" it="" pdf."="" placeholder="Your extracted text will appear here. Upload an image to get started, or type here to create your own document." result="" spellcheck="false" text".&#10;3.="" the="" then=""></textarea>
+<div class="empty-editor-hint" id="emptyHint">
+<span class="hint-sparkle">✳</span>
+<strong>Your text will land here</strong>
+<span>Once the scan is complete, you can edit every word.</span>
+</div>
+</div>
+<div class="editor-footer">
+<div class="text-stats">
+<span><strong id="wordCount">0</strong> words</span><i></i>
+<span><strong id="charCount">0</strong> characters</span><i></i>
+<span id="confidenceLabel">No scan yet</span>
+</div>
+<button class="clear-text-button" disabled="" id="clearTextBtn" type="button">Clear text</button>
+</div>
+<div class="export-area">
+<div class="export-copy">
+<span class="export-icon"><svg aria-hidden="true" viewbox="0 0 22 22"><path d="M5 2.8h8l4 4v12.4H5a1.5 1.5 0 0 1-1.5-1.5V4.3A1.5 1.5 0 0 1 5 2.8Z"></path><path d="M13 3v4h4M7 12h8M7 15h8"></path></svg></span>
+<div><strong>Ready to make it a PDF?</strong><span>Clean, print-ready document layout.</span></div>
+</div>
+<button class="pdf-button" disabled="" id="pdfBtn" type="button">
+<svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 2.5h7l3.5 3.5v11A1.5 1.5 0 0 1 14 18.5H5A1.5 1.5 0 0 1 3.5 17V4A1.5 1.5 0 0 1 5 2.5Z"></path><path d="M12 2.5V6h3.5M6.5 12h7m-7 3h5"></path></svg>
+                Export PDF <span>↗</span>
+</button>
+</div>
+<div class="pdf-note">PDF export opens your browser's print window. Choose <strong>Save as PDF</strong> to download it.</div>
+</section>
+</div>
+</section></section><aside class="ad-placement ad-placement--wide" aria-label="Reserved advertisement space" data-ad-placement="home_middle"><span class="ad-label">Advertisement</span><div class="ad-reserved"><strong>Ad space reserved</strong><span>For future display advertising</span></div></aside><section class="tools-gallery" id="tools"><div class="section-heading"><div><span class="kicker">YOUR PRODUCTIVITY TOOLKIT</span><h2>Every tool, ready when you are.</h2><p>Choose what you need. Each tool has its own dedicated workspace and practical guide.</p></div><a class="section-link" href="articles/index.html">Explore guides ↗</a></div><div class="filter-bar" role="group" aria-label="Filter tools"><button type="button" data-filter="All" aria-pressed="true">All</button><button type="button" data-filter="PDF tools" aria-pressed="false">PDF tools</button><button type="button" data-filter="Image tools" aria-pressed="false">Image tools</button><button type="button" data-filter="OCR &amp; scanning" aria-pressed="false">OCR &amp; scanning</button></div><div class="tools-cards"><a class="tool-tile" data-group="PDF tools" href="tools/pdf-to-word/index.html" style="--tile-color:#6755f5"><div class="tile-visual"><img src="assets/illustrations/pdf-to-word.svg" width="450" height="270" loading="lazy" alt="Illustration of PDF to Word"></div><div class="tile-body"><span class="tile-meta">DOCUMENT CONVERTER</span><h3>PDF to Word</h3><p>Turn PDF text into a Word document you can edit and share.</p><div class="tile-bottom"><span>Open tool</span><span aria-hidden="true">↗</span></div></div></a><a class="tool-tile" data-group="PDF tools" href="tools/pdf-to-images/index.html" style="--tile-color:#2386f5"><div class="tile-visual"><img src="assets/illustrations/pdf-to-images.svg" width="450" height="270" loading="lazy" alt="Illustration of PDF to Images"></div><div class="tile-body"><span class="tile-meta">PAGE EXPORT</span><h3>PDF to Images</h3><p>Export every page of a PDF as a crisp PNG image.</p><div class="tile-bottom"><span>Open tool</span><span aria-hidden="true">↗</span></div></div></a><a class="tool-tile" data-group="PDF tools" href="tools/images-to-pdf/index.html" style="--tile-color:#18a678"><div class="tile-visual"><img src="assets/illustrations/images-to-pdf.svg" width="450" height="270" loading="lazy" alt="Illustration of Images to PDF"></div><div class="tile-body"><span class="tile-meta">CREATE PDF</span><h3>Images to PDF</h3><p>Combine photos, screenshots and scans into a single PDF.</p><div class="tile-bottom"><span>Open tool</span><span aria-hidden="true">↗</span></div></div></a><a class="tool-tile" data-group="PDF tools" href="tools/merge-pdf/index.html" style="--tile-color:#7b4ef7"><div class="tile-visual"><img src="assets/illustrations/merge-pdf.svg" width="450" height="270" loading="lazy" alt="Illustration of Merge PDFs"></div><div class="tile-body"><span class="tile-meta">COMBINE DOCUMENTS</span><h3>Merge PDFs</h3><p>Join PDFs into one organized document, in the order you choose.</p><div class="tile-bottom"><span>Open tool</span><span aria-hidden="true">↗</span></div></div></a><a class="tool-tile" data-group="PDF tools" href="tools/split-pdf/index.html" style="--tile-color:#f49a31"><div class="tile-visual"><img src="assets/illustrations/split-pdf.svg" width="450" height="270" loading="lazy" alt="Illustration of Split PDF"></div><div class="tile-body"><span class="tile-meta">EXTRACT PAGES</span><h3>Split PDF</h3><p>Save only the pages you need from a larger PDF.</p><div class="tile-bottom"><span>Open tool</span><span aria-hidden="true">↗</span></div></div></a><a class="tool-tile" data-group="PDF tools" href="tools/compress-pdf/index.html" style="--tile-color:#ef5775"><div class="tile-visual"><img src="assets/illustrations/compress-pdf.svg" width="450" height="270" loading="lazy" alt="Illustration of Compress PDF"></div><div class="tile-body"><span class="tile-meta">SMALLER FILES</span><h3>Compress PDF</h3><p>Reduce image-heavy PDF file size with adjustable quality.</p><div class="tile-bottom"><span>Open tool</span><span aria-hidden="true">↗</span></div></div></a><a class="tool-tile" data-group="Image tools" href="tools/jpg-png-converter/index.html" style="--tile-color:#2386f5"><div class="tile-visual"><img src="assets/illustrations/jpg-png-converter.svg" width="450" height="270" loading="lazy" alt="Illustration of JPG / PNG Converter"></div><div class="tile-body"><span class="tile-meta">IMAGE FORMATS</span><h3>JPG / PNG Converter</h3><p>Switch image formats in seconds, including batch conversions.</p><div class="tile-bottom"><span>Open tool</span><span aria-hidden="true">↗</span></div></div></a><a class="tool-tile" data-group="Image tools" href="tools/remove-image-background/index.html" style="--tile-color:#18a678"><div class="tile-visual"><img src="assets/illustrations/remove-image-background.svg" width="450" height="270" loading="lazy" alt="Illustration of Background Remover"></div><div class="tile-body"><span class="tile-meta">COLOR-BASED CUTOUT</span><h3>Background Remover</h3><p>Remove simple solid-color backgrounds with a manual color picker.</p><div class="tile-bottom"><span>Open tool</span><span aria-hidden="true">↗</span></div></div></a><a class="tool-tile" data-group="OCR &amp; scanning" href="tools/batch-image-to-text/index.html" style="--tile-color:#6755f5"><div class="tile-visual"><img src="assets/illustrations/batch-image-to-text.svg" width="450" height="270" loading="lazy" alt="Illustration of Batch Image to Text"></div><div class="tile-body"><span class="tile-meta">BATCH OCR</span><h3>Batch Image to Text</h3><p>Extract editable text from multiple images, one after another.</p><div class="tile-bottom"><span>Open tool</span><span aria-hidden="true">↗</span></div></div></a><a class="tool-tile" data-group="OCR &amp; scanning" href="tools/crop-scanned-document/index.html" style="--tile-color:#f49a31"><div class="tile-visual"><img src="assets/illustrations/crop-scanned-document.svg" width="450" height="270" loading="lazy" alt="Illustration of Scanner with Crop"></div><div class="tile-body"><span class="tile-meta">DOCUMENT CROPPER</span><h3>Scanner with Crop</h3><p>Frame the important part of a document before text extraction.</p><div class="tile-bottom"><span>Open tool</span><span aria-hidden="true">↗</span></div></div></a><a class="tool-tile" data-group="OCR &amp; scanning" href="tools/qr-code-generator/index.html" style="--tile-color:#2386f5"><div class="tile-visual"><img src="assets/illustrations/qr-code-generator.svg" width="450" height="270" loading="lazy" alt="Illustration of QR Code Generator"></div><div class="tile-body"><span class="tile-meta">QUICK GENERATOR</span><h3>QR Code Generator</h3><p>Create a scannable QR code for a link or short message.</p><div class="tile-bottom"><span>Open tool</span><span aria-hidden="true">↗</span></div></div></a><a class="tool-tile" data-group="OCR &amp; scanning" href="tools/image-to-text/index.html" style="--tile-color:#6755f5"><div class="tile-visual"><img src="assets/illustrations/image-to-text.svg" width="450" height="270" loading="lazy" alt="Illustration of Image to Text (OCR)"></div><div class="tile-body"><span class="tile-meta">FEATURED OCR</span><h3>Image to Text (OCR)</h3><p>Turn screenshots and scanned images into editable text.</p><div class="tile-bottom"><span>Open tool</span><span aria-hidden="true">↗</span></div></div></a></div></section><section class="benefits" aria-label="Benefits"><div class="benefit"><span class="emoji">🔐</span><h3>Built for local workflows</h3><p>File processing runs in the browser. Some engines load code and language resources from CDNs.</p></div><div class="benefit"><span class="emoji">✨</span><h3>Simple by design</h3><p>Focused, accessible workspaces with clear steps and feedback.</p></div><div class="benefit"><span class="emoji">🗂️</span><h3>All your essentials</h3><p>OCR, PDF conversion, image tools, cropping and QR codes in one place.</p></div><div class="benefit"><span class="emoji">📱</span><h3>Works across devices</h3><p>Responsive layouts for a laptop, tablet or mobile browser.</p></div></section><section class="article-preview"><div class="section-heading"><div><span class="kicker">LEARN & EXPLORE</span><h2>Practical guides.</h2><p>Helpful explanations so you can choose the right tool and get better results.</p></div><a class="section-link" href="articles/index.html">All articles ↗</a></div><div class="blog-grid"><a class="blog-card" href="articles/how-to-extract-text-from-an-image/index.html"><span>KNOWLEDGE BASE · GUIDE</span><h3>How to Extract Text from an Image: A Practical Guide</h3><p>Simple steps for turning screenshots, scanned pages and photos into editable text, plus OCR accuracy tips.</p></a><a class="blog-card" href="articles/jpg-vs-png-which-format-should-you-use/index.html"><span>KNOWLEDGE BASE · GUIDE</span><h3>JPG vs PNG: Which Image Format Should You Use?</h3><p>Compare image quality, transparency and file sizes to choose the right format for photographs or graphics.</p></a><a class="blog-card" href="articles/how-to-combine-images-into-one-pdf/index.html"><span>KNOWLEDGE BASE · GUIDE</span><h3>How to Combine Multiple Images into One PDF</h3><p>A quick walkthrough for preparing document photos, ordering pages and exporting one convenient PDF.</p></a></div></section></main><div class="footer-wrap"><footer class="footer"><a id="footerLogo" class="brand footer-brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 4.75h10.5L25 11.2v15.05A2.75 2.75 0 0 1 22.25 29h-14.5A2.75 2.75 0 0 1 5 26.25V7.5a2.75 2.75 0 0 1 3-2.75Z" stroke="white" stroke-width="2" fill="none"/><path d="M18 5v6.5h6.5M10 17h12M10 21h12M10 25h7" stroke="white" stroke-width="2" fill="none"/></svg></span><span class="brand-name">snaptext<span>studio</span></span></a><div class="footer-links"><a href="index.html">Home</a><a href="index.html#tools">All tools</a><a href="tools/image-to-text/index.html">OCR</a><a href="articles/index.html">Articles</a></div><span class="footer-right">© 2026 SnapText Studio</span></footer></div></div><div class="toast" id="toast" role="status" aria-live="polite"></div><script>window.SNAPTEXT_HOME="index.html";window.SNAPTEXT_ROUTES={"pdf-word": "tools/pdf-to-word/index.html", "pdf-images": "tools/pdf-to-images/index.html", "images-pdf": "tools/images-to-pdf/index.html", "merge-pdf": "tools/merge-pdf/index.html", "split-pdf": "tools/split-pdf/index.html", "compress-pdf": "tools/compress-pdf/index.html", "image-convert": "tools/jpg-png-converter/index.html", "bg-remover": "tools/remove-image-background/index.html", "batch-ocr": "tools/batch-image-to-text/index.html", "crop-tool": "tools/crop-scanned-document/index.html", "qr-gen": "tools/qr-code-generator/index.html", "image-to-text": "tools/image-to-text/index.html", "home": "index.html"};</script><script defer src="assets/app.js"></script></body></html>
