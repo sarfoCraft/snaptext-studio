@@ -61,7 +61,7 @@
       font-family: 'DM Sans', sans-serif;
       -webkit-font-smoothing: antialiased;
       transition: background .3s ease, color .3s ease;
-      overflow-x: hidden;
+      overflow-x: clip;
     }
     h1, h2, h3, p { margin-top: 0; }
     button, input, select, textarea { font-family: inherit; }
@@ -630,4 +630,41 @@ a{color:inherit}a:focus-visible,button:focus-visible,input:focus-visible,select:
 .editorial-aside{min-width:0}.editorial-aside .article-toc{position:sticky;top:104px}
 .related-reading{border-top:1px solid var(--line);margin-top:35px;padding-top:26px}.related-reading h2{font:800 22px Manrope,sans-serif}.related-reading a{text-decoration:none;color:var(--purple);font-weight:700}
 @media(max-width:760px){.ad-placement{margin:22px 0 28px}.ad-placement--sidebar .ad-reserved{min-height:120px}.editorial-aside{order:-1}.editorial-aside .article-toc{position:static}}
+
+
+/* WordToPDF GitHub Pages compatibility and sticky header safeguard. */
+html,
+body {
+  overflow-x: clip !important;
+}
+
+html {
+  scroll-padding-top: 92px;
+}
+
+.app-shell {
+  overflow: visible !important;
+}
+
+.topbar {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  isolation: isolate;
+}
+
+main[id],
+section[id],
+article[id] {
+  scroll-margin-top: 92px;
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0 !important;
+  }
+}
 

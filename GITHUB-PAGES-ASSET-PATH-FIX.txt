@@ -1,0 +1,31 @@
+GITHUB PAGES ASSET PATH FIX
+
+The original project requested assets and internal pages from root paths such as:
+  /assets/css/app.css
+  /assets/images/wordtopdf-icon.png
+  /about/
+
+That works on a custom domain deployed at the domain root, but fails on a GitHub
+Pages project URL such as:
+  https://sarfocraft.github.io/snaptext-studio/
+
+This update converts local HTML links and asset paths to page-relative paths.
+The same files now work from both:
+  - GitHub Pages project hosting (/snaptext-studio/)
+  - A custom domain hosted at its root (/)
+
+It also updates the inline WordToPDFConfig homeUrl and ocrUrl values, changes
+horizontal overflow from hidden to clip where it affected sticky scrolling, and
+adds .nojekyll for GitHub Pages.
+
+INSTALLATION
+1. Extract this ZIP.
+2. Upload and replace the website files in the repository root. Do not upload the
+   outer ZIP folder as an extra nested directory.
+3. Commit the files to the branch used by GitHub Pages.
+4. Wait for the Pages deployment to complete.
+5. Open https://sarfocraft.github.io/snaptext-studio/ and hard-refresh with
+   Ctrl + Shift + R.
+
+The canonical SEO URLs still point to https://wordtopdf.fun/, which is intended
+for the custom domain.

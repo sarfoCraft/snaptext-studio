@@ -1,34 +1,47 @@
-WORDTOPDF GITHUB PAGES PATH FIX, VERSION 1.2.0
+WORDTOPDF GITHUB PAGES ASSET PATH FIX, VERSION 1.4
 
-Why the screenshot was broken:
-The page was served from:
+Problem shown in the browser screenshot:
+The site was opened at:
 https://sarfocraft.github.io/snaptext-studio/
 
-But the previous HTML requested CSS and images from root paths such as:
+But HTML files requested local assets and pages from the domain root, for example:
   /assets/css/app.css
   /assets/images/wordtopdf-icon.png
+  /about/
 
-On a GitHub Pages project site, those requests point outside the repository's /snaptext-studio/ folder.
+On a GitHub Pages project site, those paths point outside the repository's
+/snaptext-studio/ folder. As a result, CSS, images and JavaScript did not load,
+and the browser displayed unstyled HTML.
 
-What changed:
-- Converted local root-relative HTML links, images, CSS and JavaScript paths to base-relative paths.
-- Added automatic base-path detection for https://sarfocraft.github.io/snaptext-studio/.
-- The same package automatically uses the root path on wordtopdf.fun and Cloudflare Pages.
-- Added .nojekyll for GitHub Pages.
-- Kept the existing WordToPDF tools, ad placeholders, privacy disclosure and SEO pages.
+What this update changes:
+- Rewrites all root-relative local href, src, action, poster and data-src paths
+  to correct page-relative paths in all HTML files.
+- Updates the inline WordToPDFConfig homeUrl and ocrUrl values on tool pages.
+- Keeps the same files compatible with a custom domain deployed at its root.
+- Changes horizontal overflow from hidden to clip where it could interfere with
+  sticky header behavior.
+- Adds a sticky-header safeguard to both current and legacy stylesheets.
+- Adds .nojekyll for GitHub Pages.
+- Preserves existing page content, tool code, design, SEO canonical URLs,
+  privacy disclosures and ad placeholders.
 
-Validation performed:
-- 25 HTML pages contain the base-path loader.
-- 558 local href/src/action/poster references checked.
-- 0 missing local references for the GitHub Pages project URL.
-- 0 missing local references for a root-domain deployment.
-- JavaScript syntax checks passed for site.js and runtime.js.
+Validation:
+- 40 HTML pages scanned.
+- 558 root-relative local HTML references converted.
+- 26 inline runtime URL values updated.
+- 0 missing local references on GitHub Pages project URL simulation.
+- 0 missing local references on custom-domain root simulation.
+- 0 root-relative local references remain in HTML href/src/action/poster values.
+- Both CSS files parse with zero stylesheet syntax errors.
+- site.js, runtime.js and app.js pass Node syntax checks.
+- Live GitHub deployment and actual browser file conversion were not tested here.
 
-How to apply:
+Install:
 1. Extract this ZIP.
-2. Upload the CONTENTS of the extracted folder to the root of sarfocraft/snaptext-studio.
-3. Replace the old files when GitHub asks.
-4. Commit the changes to the branch used by GitHub Pages.
-5. Wait for deployment, then hard-refresh the website with Ctrl+Shift+R.
+2. Upload the CONTENTS of the extracted folder to the root of
+   sarfocraft/snaptext-studio. Do not create an extra nested project folder.
+3. Replace the old files and commit to the GitHub Pages branch.
+4. Wait for deployment to complete.
+5. Open https://sarfocraft.github.io/snaptext-studio/ and press Ctrl + Shift + R.
 
-This package is prepared and statically validated. The live GitHub Pages deployment and real file-conversion flows have not been tested from this package.
+The canonical SEO URLs remain set to https://wordtopdf.fun/ for the custom domain.

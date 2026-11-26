@@ -3,26 +3,25 @@ WORDTOPDF HOMEPAGE DESIGN REFRESH, VERSION 1.3
 This update improves the homepage layout based on the supplied screenshot.
 
 What changed:
-- Desktop hero and converter now sit side-by-side instead of leaving a large empty vertical gap.
-- The hero has clearer copy, primary/secondary actions, benefit points and file-category chips.
-- The Word-to-PDF card has a more visible upload dropzone, document format badge, free-tool label, status feedback and browser-processing note.
+- Desktop hero and converter sit side-by-side.
+- The hero has clearer copy, primary/secondary actions and benefit points.
+- The Word-to-PDF card has a visible upload area, status feedback and browser-processing note.
 - The upload area supports click-to-browse, keyboard activation and drag-and-drop.
-- The file selector checks the .docx extension and 25 MB maximum before enabling the Create PDF button.
+- The file selector checks the DOCX extension and 25 MB maximum.
 - Added a 3-step Upload / Prepare / Save PDF explanation.
-- The 12 tool cards now have icons, clearer hierarchy and hover/focus feedback.
-- Tablet and mobile layouts stack cleanly and reduce card density.
-- Existing WordToPDF IDs, tool routes, theme toggle, privacy policy, ad placeholders and GitHub Pages base-path fix are preserved.
+- The 12 tool cards have clearer hierarchy and hover/focus feedback.
+- Tablet and mobile layouts stack cleanly.
+- Existing tool routes, theme toggle, privacy policy and ad placeholders are preserved.
 
 Important behavior:
-The tool prepares a print-ready page and opens the browser print dialog. The visitor still chooses "Save as PDF". It does not silently download a PDF file.
+The tool prepares a print-ready page and opens the browser print dialog. The visitor
+still chooses "Save as PDF". It does not silently download a PDF file.
 
-Validation:
-- Homepage HTML parsed.
-- No duplicate IDs on homepage.
-- All 12 tool cards are present.
-- Required converter IDs are present.
-- JavaScript syntax checks passed for runtime.js and site.js.
-- Responsive CSS and the existing GitHub Pages base-path logic remain included.
+Latest GitHub Pages compatibility update:
+See GITHUB-PAGES-FIX-NOTES.txt. The latest update uses page-relative local links
+and asset references so the same site works from the GitHub Pages project path
+and from the custom-domain root. It also includes sticky-header safeguards.
 
 Deployment:
-Upload the CONTENTS of the extracted ZIP to the root of sarfocraft/snaptext-studio and commit to the branch used by GitHub Pages. The package also remains compatible with Cloudflare Pages and the custom domain root path.
+Upload the CONTENTS of the extracted ZIP to the root of sarfocraft/snaptext-studio
+and commit to the branch used by GitHub Pages.
