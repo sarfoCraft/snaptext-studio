@@ -1,0 +1,34 @@
+WORDTOPDF GITHUB PAGES PATH FIX, VERSION 1.2.0
+
+Why the screenshot was broken:
+The page was served from:
+https://sarfocraft.github.io/snaptext-studio/
+
+But the previous HTML requested CSS and images from root paths such as:
+  /assets/css/app.css
+  /assets/images/wordtopdf-icon.png
+
+On a GitHub Pages project site, those requests point outside the repository's /snaptext-studio/ folder.
+
+What changed:
+- Converted local root-relative HTML links, images, CSS and JavaScript paths to base-relative paths.
+- Added automatic base-path detection for https://sarfocraft.github.io/snaptext-studio/.
+- The same package automatically uses the root path on wordtopdf.fun and Cloudflare Pages.
+- Added .nojekyll for GitHub Pages.
+- Kept the existing WordToPDF tools, ad placeholders, privacy disclosure and SEO pages.
+
+Validation performed:
+- 25 HTML pages contain the base-path loader.
+- 558 local href/src/action/poster references checked.
+- 0 missing local references for the GitHub Pages project URL.
+- 0 missing local references for a root-domain deployment.
+- JavaScript syntax checks passed for site.js and runtime.js.
+
+How to apply:
+1. Extract this ZIP.
+2. Upload the CONTENTS of the extracted folder to the root of sarfocraft/snaptext-studio.
+3. Replace the old files when GitHub asks.
+4. Commit the changes to the branch used by GitHub Pages.
+5. Wait for deployment, then hard-refresh the website with Ctrl+Shift+R.
+
+This package is prepared and statically validated. The live GitHub Pages deployment and real file-conversion flows have not been tested from this package.

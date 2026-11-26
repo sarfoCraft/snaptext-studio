@@ -1,6 +1,8 @@
-# WordToPDF Cloudflare Pages Website
+# WordToPDF Static Website, GitHub Pages + Cloudflare Pages
 
 This is the static-site conversion of the supplied SnapText Studio WordPress theme, rebranded as WordToPDF.
+
+**GitHub Pages path fix:** the site now automatically detects `https://sarfocraft.github.io/snaptext-studio/` and loads assets/navigation from `/snaptext-studio/`. On `wordtopdf.fun` and Cloudflare Pages, it uses `/`. This corrects the unstyled page shown when assets were requested from the wrong root path.
 
 ## What is included
 
@@ -9,7 +11,8 @@ This is the static-site conversion of the supplied SnapText Studio WordPress the
 - About page, Articles & Guides index, four starter articles, Privacy Policy, Terms and Contact pages.
 - Rebranded CSS, logo/icon, dark-mode toggle, responsive navigation.
 - Static SEO titles, descriptions, canonical links, Open Graph tags, Schema.org JSON-LD, robots.txt and sitemap.xml.
-- Cloudflare Pages `_headers` and `_redirects`.
+- Cloudflare Pages `_headers` and `_redirects`, plus `.nojekyll` for GitHub Pages.
+- Automatic base-path detection: GitHub project URL `/snaptext-studio/` uses the repository subpath; Cloudflare Pages and a custom domain use the root path.
 
 ## Important source audit note
 
@@ -25,19 +28,28 @@ The uploaded ZIP contained the WordPress theme and PHP tool interfaces, but did 
 - Selected files are processed in the browser by the supplied runtime. The site does not include a WordToPDF file-upload server or account/database system.
 - Third-party libraries and OCR language data are loaded from pinned public CDNs. CDN providers may receive normal request metadata. Review the privacy policy and library terms before launch.
 
-## Deploy to Cloudflare Pages using GitHub
+## Deploy to your existing GitHub Pages repository
+
+This package automatically detects the current project URL `https://sarfocraft.github.io/snaptext-studio/` and uses `/snaptext-studio/` as its asset and navigation base. On Cloudflare Pages or a custom domain, it automatically uses `/`.
 
 1. Extract this ZIP on your computer.
-2. Create a new GitHub repository, for example `wordtopdf`.
-3. Upload the **contents** of this folder to the repository root. `index.html`, `assets/`, `_headers` and `_redirects` must be at the root, not inside an extra nested folder.
-4. In Cloudflare Dashboard, open **Workers & Pages** and choose **Create application** > **Pages** > **Connect to Git**.
-5. Connect GitHub and select the `wordtopdf` repository.
-6. Choose **None** as the framework preset.
-7. Leave the build command empty. Set the build output directory to `.` (the repository root).
-8. Deploy.
-9. In the Pages project, open **Custom domains** and add `wordtopdf.fun` and `www.wordtopdf.fun` if you want both.
-10. In Cloudflare DNS, follow the domain setup prompts. Keep the domain's nameservers pointed to Cloudflare if Cloudflare is already managing DNS.
-11. Test the homepage, every tool page, mobile layout and file conversions over HTTPS.
+2. Open your existing GitHub repository: `sarfocraft/snaptext-studio`.
+3. Upload the **contents** of the extracted folder to the repository root. Do not upload the ZIP itself or put the files inside another folder. `index.html`, `assets/`, `favicon.svg`, `.nojekyll` and the other files must be at the top level.
+4. Commit the changes to the branch configured for GitHub Pages (usually `main`).
+5. In the repository, open **Settings > Pages**. Confirm that the source is **Deploy from a branch**, the correct branch is selected, and the folder is `/(root)`.
+6. Wait for the GitHub Pages deployment to finish.
+7. Open `https://sarfocraft.github.io/snaptext-studio/` in a private/incognito window or hard-refresh with Ctrl+Shift+R.
+8. Test the homepage, tool links, logo, CSS, JavaScript and sample file conversions.
+
+## Deploy the same package to Cloudflare Pages later
+
+1. Connect the GitHub repository to Cloudflare Pages, or upload the extracted static output.
+2. Choose **None** as the framework preset.
+3. Leave the build command empty.
+4. Set the build output directory to `.` (repository root).
+5. Deploy.
+6. Add `wordtopdf.fun` under the Pages project's **Custom domains** and follow Cloudflare's DNS prompts.
+7. On Cloudflare Pages and on `wordtopdf.fun`, the package automatically uses the root path, so no source edits are needed.
 
 ## Before public launch
 
