@@ -1,34 +1,42 @@
-WORDTOPDF CLOUDFLARE PAGES CHECKLIST
+WORDTOPDF DEPLOYMENT CHECKLIST
 
-[ ] Extract ZIP.
-[ ] Upload the contents to the root of a new GitHub repository.
-[ ] Connect repository to Cloudflare Pages.
+GITHUB PAGES (current setup)
+[ ] Extract the ZIP.
+[ ] Upload the ZIP contents to the root of sarfocraft/snaptext-studio.
+[ ] In GitHub Settings > Pages, select Deploy from a branch.
+[ ] Select branch main and folder / (root).
+[ ] Wait for the deployment workflow to finish.
+[ ] Open https://sarfocraft.github.io/snaptext-studio/ and hard-refresh.
+[ ] Test the homepage, every current tool, legacy /tools/ links, articles and mobile layout.
+[ ] If using wordtopdf.fun, add it in Settings > Pages > Custom domain.
+[ ] Set Cloudflare DNS records to the exact values GitHub Pages provides.
+[ ] Confirm HTTPS and redirects work.
+
+CLOUDFLARE PAGES (alternative hosting)
+[ ] Connect the GitHub repository to Cloudflare Pages.
 [ ] Framework preset: None.
 [ ] Build command: leave blank.
 [ ] Build output directory: .
-[ ] Deploy and wait for the successful build.
-[ ] Add wordtopdf.fun under Custom domains.
-[ ] Confirm HTTPS works.
-[ ] Test every tool.
-[ ] Replace support email placeholder on Contact, Privacy and Terms pages.
-[ ] Submit sitemap.xml to Google Search Console.
+[ ] Deploy and add wordtopdf.fun under Custom domains.
+[ ] Test all pages and tools over HTTPS.
 
-Note: This is a static browser-side site. It does not include WordPress, PHP, MySQL, user accounts, payments, server-side file conversion or file storage.
+BEFORE PUBLIC LAUNCH
+[ ] Replace contact/support email placeholders.
+[ ] Review Privacy Policy and Terms against actual services and target visitors.
+[ ] Test every converter with sample files on desktop and mobile.
+[ ] Submit https://wordtopdf.fun/sitemap.xml to Google Search Console.
 
-
-AD MONETIZATION CHECKLIST
-
-[ ] Apply to Adsterra and submit wordtopdf.fun for approval.
-[ ] Create one Adsterra 300x250 banner zone.
-[ ] Paste the exact Adsterra 300x250 code into each placeholder and remove hidden from each populated slot.
-[ ] Remove hidden from the populated Adsterra slot elements.
+AD MONETIZATION
+[ ] Apply to Adsterra and submit wordtopdf.fun for review.
+[ ] Create the approved banner zone and paste the exact generated tag.
 [ ] Add and verify wordtopdf.fun in Monetag.
-[ ] Create Monetag In-Page Push (Banner) zone.
-[ ] Paste the exact Monetag tag into each monetized page head marker.
-[ ] Preserve data-cfasync="false" in the Monetag tag if supplied.
-[ ] Add exact seller records to root ads.txt only if the networks provide them.
-[ ] Add a real privacy/support email and review privacy/legal text.
-[ ] Configure a compliant consent-management solution if required for your visitors.
-[ ] Test with ad blockers disabled on desktop and mobile.
+[ ] Create the chosen on-page banner zone and paste the exact generated tag.
+[ ] Add exact seller records to ads.txt only when supplied by the ad networks.
+[ ] Review privacy and consent requirements for your visitors.
+[ ] Test the website with ad blockers disabled on desktop and mobile.
 
-No publisher tags, zone IDs, seller IDs or account credentials are included in this package.
+NOTES
+- This is a static browser-side website. It does not include WordPress, PHP, MySQL,
+  accounts, payments, server-side conversion or file storage.
+- No publisher tags, zone IDs, seller IDs or account credentials are included.
+- Read ADS-SETUP-GUIDE.md before installing advertising tags.

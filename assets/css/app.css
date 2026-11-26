@@ -1815,39 +1815,713 @@ article[id] {
 }
 
 
-/* WordToPDF GitHub Pages compatibility and sticky header safeguard. */
-html,
-body {
-  overflow-x: clip !important;
+
+/* =========================================================
+   WORDTOPDF TOOL PAGE VISUAL SYSTEM v2
+   Illustrated left-side introduction + tool workspace on right.
+   ========================================================= */
+
+.tool-page {
+  max-width: 1320px;
+  margin-inline: auto;
+  padding: 34px 0 76px;
 }
 
-html {
-  scroll-padding-top: 92px;
+.tool-page > .back-btn {
+  margin-bottom: 22px;
 }
 
-.app-shell {
-  overflow: visible !important;
+.tool-landing-layout,
+.ocr-tool-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr);
+  align-items: center;
+  gap: clamp(30px, 4.5vw, 68px);
 }
 
-.topbar {
-  position: -webkit-sticky !important;
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 1000 !important;
+.tool-marketing-panel {
+  position: relative;
+  min-width: 0;
+  padding: clamp(22px, 3vw, 42px) 0;
   isolation: isolate;
 }
 
-main[id],
-section[id],
-article[id] {
-  scroll-margin-top: 92px;
+.tool-marketing-panel::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -18px -28px -18px -48px;
+  border-radius: 30px;
+  background:
+    radial-gradient(ellipse at 12% 14%, color-mix(in srgb, var(--blue) 13%, transparent), transparent 63%),
+    radial-gradient(ellipse at 78% 82%, color-mix(in srgb, var(--purple) 8%, transparent), transparent 58%);
+  pointer-events: none;
 }
 
-@media (max-width: 760px) {
-  .topbar {
-    position: -webkit-sticky !important;
-    position: sticky !important;
-    top: 0 !important;
+.tool-marketing-kicker {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.65px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.tool-marketing-kicker::before {
+  content: "";
+  width: 23px;
+  height: 1px;
+  background: currentColor;
+}
+
+.tool-marketing-title {
+  max-width: 590px;
+  margin: 18px 0 17px;
+  color: var(--ink);
+  font-family: Manrope, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(36px, 4vw, 53px);
+  font-weight: 850;
+  line-height: 1.06;
+  letter-spacing: -2.2px;
+  text-wrap: balance;
+}
+
+.tool-marketing-copy {
+  max-width: 540px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.tool-marketing-benefits {
+  display: grid;
+  gap: 11px;
+  margin-top: 23px;
+}
+
+.tool-benefit {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--ink-2);
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.tool-benefit svg {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  padding: 2px;
+  border-radius: 50%;
+  background: var(--green-soft);
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.tool-illustration {
+  position: relative;
+  width: min(100%, 490px);
+  margin: 17px 0 0;
+  padding: 0;
+}
+
+.tool-illustration img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 270px;
+  object-fit: contain;
+  object-position: left center;
+  filter: drop-shadow(0 12px 18px rgba(40, 55, 100, .055));
+}
+
+.tool-workspace-panel {
+  min-width: 0;
+}
+
+.tool-workspace-kicker {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 11px;
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.55px;
+}
+
+.tool-live-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 4px var(--green-soft);
+}
+
+.tool-workspace-panel .tool-page-header {
+  margin: 0 0 18px;
+  text-align: left;
+}
+
+.tool-workspace-panel .tool-page-header .section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.45px;
+}
+
+.tool-workspace-panel .tool-page-header h1 {
+  margin: 9px 0 7px;
+  color: var(--ink);
+  font-family: Manrope, system-ui, sans-serif;
+  font-size: clamp(24px, 2.45vw, 32px);
+  font-weight: 850;
+  line-height: 1.16;
+  letter-spacing: -1.15px;
+}
+
+.tool-workspace-panel .tool-page-header p {
+  max-width: 570px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.tool-workspace-panel .tool-page-card {
+  width: 100%;
+  max-width: none;
+  padding: clamp(20px, 2.5vw, 30px);
+  border: 1px solid color-mix(in srgb, var(--blue) 13%, var(--line));
+  border-radius: 21px;
+  background: var(--surface);
+  box-shadow: 0 18px 44px rgba(25, 40, 85, .075);
+}
+
+.tool-workspace-panel .tool-page-card:focus-within {
+  border-color: color-mix(in srgb, var(--blue) 32%, var(--line));
+}
+
+.tool-workspace-panel .tool-note {
+  line-height: 1.7;
+}
+
+.tool-workspace-panel .tool-status {
+  overflow-wrap: anywhere;
+}
+
+/* OCR has its own larger workspace, but follows the same two-column page system. */
+.ocr-tool-page {
+  padding-top: 34px;
+}
+
+.ocr-tool-layout {
+  align-items: start;
+}
+
+.ocr-tool-page .hero {
+  position: relative;
+  min-width: 0;
+  padding: 34px 0 22px;
+  text-align: left;
+}
+
+.ocr-tool-page .hero::before {
+  inset: -18px -28px -18px -48px;
+  background:
+    radial-gradient(ellipse at 12% 14%, color-mix(in srgb, var(--blue) 13%, transparent), transparent 63%),
+    radial-gradient(ellipse at 78% 82%, color-mix(in srgb, var(--purple) 8%, transparent), transparent 58%);
+}
+
+.ocr-tool-page .hero .eyebrow {
+  justify-content: flex-start;
+  font-size: 10px;
+  letter-spacing: 1.55px;
+}
+
+.ocr-tool-page .hero h1 {
+  max-width: 570px;
+  margin: 18px 0 16px;
+  font-size: clamp(36px, 4vw, 51px);
+  line-height: 1.07;
+  letter-spacing: -2.1px;
+  text-wrap: balance;
+}
+
+.ocr-tool-page .hero h1 span {
+  color: var(--blue);
+}
+
+.ocr-tool-page .hero .hero-copy {
+  max-width: 540px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.ocr-tool-page .hero .hero-points {
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 11px;
+  margin-top: 22px;
+}
+
+.ocr-tool-page .hero .hero-points span {
+  font-size: 11px;
+}
+
+.ocr-tool-illustration {
+  margin-top: 15px;
+}
+
+.ocr-workspace-panel {
+  min-width: 0;
+  container-type: inline-size;
+}
+
+.ocr-tool-page-header {
+  margin: 0 0 17px;
+}
+
+.ocr-tool-page-header h2 {
+  margin: 9px 0 7px;
+  color: var(--ink);
+  font-family: Manrope, system-ui, sans-serif;
+  font-size: clamp(24px, 2.4vw, 31px);
+  font-weight: 850;
+  line-height: 1.16;
+  letter-spacing: -1px;
+}
+
+.ocr-tool-page-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.ocr-tool-page .workspace {
+  padding: clamp(17px, 2.1vw, 26px);
+  border-radius: 20px;
+}
+
+.ocr-tool-page .workspace-heading {
+  margin-bottom: 18px;
+}
+
+.ocr-tool-page .workspace-heading h2 {
+  font-size: 21px;
+}
+
+.ocr-tool-page .panel {
+  padding: 16px;
+}
+
+.ocr-tool-page .panel-heading {
+  gap: 8px;
+}
+
+.ocr-tool-page .panel-heading h3 {
+  font-size: 14px;
+}
+
+@container (min-width: 640px) {
+  .ocr-tool-page .workspace-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
   }
 }
 
+/* The home tool directory uses an icon, readable text column and a small arrow. */
+.home-tool-link {
+  grid-template-columns: 43px minmax(0, 1fr) 18px;
+  align-items: center;
+}
+
+.home-tool-icon {
+  display: grid;
+  width: 43px;
+  height: 43px;
+  place-items: center;
+  border-radius: 13px;
+  background: var(--purple-soft);
+  color: var(--purple);
+}
+
+.home-tool-icon svg {
+  display: block;
+  width: 23px;
+  height: 23px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.65;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.home-tool-card-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.home-tool-card-copy strong {
+  font-size: 12px;
+  line-height: 1.35;
+  overflow-wrap: normal;
+}
+
+.home-tool-card-copy > span {
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.home-tool-arrow {
+  justify-self: end;
+  align-self: center;
+  font-size: 14px;
+}
+
+/* Responsive page composition. */
+@media (max-width: 1040px) {
+  .tool-landing-layout,
+  .ocr-tool-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+  }
+
+  .tool-marketing-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, .82fr);
+    align-items: center;
+    column-gap: 22px;
+    padding: 20px 0 8px;
+  }
+
+  .tool-marketing-kicker,
+  .tool-marketing-title,
+  .tool-marketing-copy,
+  .tool-marketing-benefits {
+    grid-column: 1;
+  }
+
+  .tool-marketing-kicker { grid-row: 1; }
+  .tool-marketing-title { grid-row: 2; }
+  .tool-marketing-copy { grid-row: 3; }
+  .tool-marketing-benefits { grid-row: 4; }
+
+  .tool-marketing-panel .tool-illustration {
+    grid-column: 2;
+    grid-row: 1 / 5;
+    margin: 0;
+  }
+
+  .ocr-tool-page .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, .82fr);
+    align-items: center;
+    column-gap: 22px;
+    padding: 20px 0 8px;
+  }
+
+  .ocr-tool-page .hero .eyebrow,
+  .ocr-tool-page .hero h1,
+  .ocr-tool-page .hero .hero-copy,
+  .ocr-tool-page .hero .hero-points {
+    grid-column: 1;
+  }
+
+  .ocr-tool-page .hero .eyebrow { grid-row: 1; }
+  .ocr-tool-page .hero h1 { grid-row: 2; }
+  .ocr-tool-page .hero .hero-copy { grid-row: 3; }
+  .ocr-tool-page .hero .hero-points { grid-row: 4; }
+
+  .ocr-tool-page .hero .tool-illustration {
+    grid-column: 2;
+    grid-row: 1 / 5;
+    margin: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .tool-page {
+    padding-top: 22px;
+  }
+
+  .tool-marketing-panel {
+    display: block;
+    padding: 18px 0 8px;
+  }
+
+  .tool-marketing-panel::before,
+  .ocr-tool-page .hero::before {
+    inset: -12px -10px;
+  }
+
+  .tool-marketing-title,
+  .ocr-tool-page .hero h1 {
+    font-size: clamp(34px, 9vw, 43px);
+    letter-spacing: -1.7px;
+  }
+
+  .tool-marketing-copy,
+  .ocr-tool-page .hero .hero-copy {
+    font-size: 13px;
+  }
+
+  .tool-illustration {
+    width: min(100%, 420px);
+    margin: 12px auto 0;
+  }
+
+  .tool-illustration img {
+    max-height: 220px;
+    object-position: center;
+  }
+
+  .tool-workspace-panel .tool-page-header h1,
+  .ocr-tool-page-header h2 {
+    font-size: 26px;
+  }
+
+  .tool-workspace-panel .tool-page-card {
+    padding: 19px;
+    border-radius: 17px;
+  }
+
+  .ocr-tool-page .hero {
+    display: block;
+    padding: 18px 0 8px;
+  }
+
+  .ocr-tool-page .hero .tool-illustration {
+    margin: 12px auto 0;
+  }
+
+  .ocr-tool-page .workspace {
+    padding: 16px;
+  }
+
+  .ocr-tool-page .panel {
+    padding: 14px;
+  }
+
+  .home-tool-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-tool-link {
+    grid-template-columns: 36px minmax(0, 1fr) 14px;
+    gap: 9px;
+    padding: 12px 10px;
+    min-height: 88px;
+  }
+
+  .home-tool-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 11px;
+  }
+
+  .home-tool-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .home-tool-links {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tool-page,
+  .tool-illustration img,
+  .home-tool-link {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+
+
+/* =========================================================
+   WORDTOPDF TOOL CARD REDESIGN v2.1
+   Text left, thumbnail image right, cleaner descriptions
+   ========================================================= */
+
+.home-more-tools,
+.wp-content-page .home-tool-links {
+  position: relative;
+}
+
+.home-tool-links {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px !important;
+  align-items: stretch;
+}
+
+.home-tool-link {
+  position: relative;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 108px;
+  align-items: center;
+  gap: 14px;
+  min-height: 140px;
+  padding: 18px 18px 16px !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 18px;
+  background: linear-gradient(180deg, var(--surface), color-mix(in srgb, var(--purple-soft) 38%, var(--surface)));
+  color: var(--ink) !important;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(24, 36, 80, .05);
+  overflow: hidden;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.home-tool-link::after {
+  content: "";
+  position: absolute;
+  inset: auto -30px -40px auto;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--blue) 12%, transparent), transparent 68%);
+  pointer-events: none;
+}
+
+.home-tool-link:hover,
+.home-tool-link:focus-visible {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--blue) 34%, var(--line));
+  box-shadow: 0 14px 30px rgba(24, 36, 80, .09);
+  outline: none;
+}
+
+.home-tool-card-copy {
+  display: flex !important;
+  min-width: 0;
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  z-index: 1;
+}
+
+.home-tool-card-copy strong {
+  display: block;
+  color: var(--ink) !important;
+  font-family: Manrope, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 19px !important;
+  line-height: 1.18 !important;
+  font-weight: 800 !important;
+  letter-spacing: -.55px;
+  text-wrap: balance;
+}
+
+.home-tool-card-copy > span {
+  display: block !important;
+  color: var(--muted) !important;
+  font-size: 12px !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+.home-tool-link-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  color: var(--blue);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: .15px;
+}
+
+.home-tool-thumb {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 108px;
+  height: 94px;
+  padding: 8px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--blue) 7%, #fff), color-mix(in srgb, var(--purple) 7%, #fff));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--blue) 10%, transparent);
+  z-index: 1;
+}
+
+.home-tool-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 14px rgba(27, 42, 90, .09));
+}
+
+.home-tool-icon,
+.home-tool-arrow {
+  display: none !important;
+}
+
+#tools .section-kicker,
+.wp-content-header .section-kicker {
+  margin-bottom: 8px;
+}
+
+.wp-content-page .home-tool-links {
+  margin-top: 26px;
+}
+
+@media (max-width: 1200px) {
+  .home-tool-links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .home-tool-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .home-tool-links {
+    grid-template-columns: 1fr;
+  }
+
+  .home-tool-link {
+    grid-template-columns: minmax(0, 1fr) 88px;
+    min-height: 130px;
+    padding: 16px !important;
+  }
+
+  .home-tool-card-copy strong {
+    font-size: 18px !important;
+  }
+
+  .home-tool-thumb {
+    width: 88px;
+    height: 78px;
+  }
+}

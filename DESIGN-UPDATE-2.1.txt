@@ -1,0 +1,24 @@
+WORDTOPDF TOOL CARD IMAGE UPDATE 2.1
+
+This update fixes the tool card section that was still too simple.
+
+WHAT WAS CHANGED
+- Homepage "More tools for your documents" cards rebuilt.
+- All Tools page cards rebuilt.
+- Every card now has:
+  * heading on the left
+  * short text below the heading
+  * a small PNG thumbnail image on the right
+  * an "Open tool" label
+- Generated PNG thumbnails for all 13 tools from the existing tool illustrations.
+- Fixed the first All Tools card so Word to PDF also matches the other cards.
+- Existing tool pages, converter forms, scripts and IDs were preserved.
+
+FILES ADDED
+- assets/tool-thumbs/*.png (13 small thumbnail images)
+
+VALIDATION
+- Homepage cards updated: 12
+- All Tools page cards updated: 13
+- PNG thumbnails generated: 13
+- ZIP should be uploaded to the repository root after extraction.

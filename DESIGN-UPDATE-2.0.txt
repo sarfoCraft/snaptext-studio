@@ -1,0 +1,42 @@
+WORDTOPDF ILLUSTRATED TOOL PAGE UPDATE 2.0
+
+WHAT CHANGED
+- All 13 active tool pages now use the same two-column layout.
+- Left side: tool-specific headline, explanation, three benefit points and a matching illustration.
+- Right side: the actual tool name, description and working converter/workspace.
+- Added a dedicated Word-to-PDF illustration.
+- Image to Text OCR now follows the same visual layout while keeping its upload,
+  paste, screen capture, language, OCR, editor and export controls.
+- Added individual line icons to all 12 homepage tool cards.
+- Added individual line icons to all 13 cards on the All Tools page.
+- Added responsive layouts for tablet and mobile.
+
+PRESERVED
+- Existing form element IDs and converter controls.
+- Existing JavaScript files and script references.
+- Existing SEO article content, routes, page titles and descriptions.
+- Existing sticky header and dark mode.
+- Existing Cloudflare Pages configuration files.
+- Custom domain CNAME: wordtopdf.fun.
+
+GITHUB REPLACEMENT
+1. Extract this ZIP.
+2. Upload the contents of the extracted folder to the ROOT of the
+   sarfocraft/snaptext-studio repository.
+3. Replace matching files when GitHub asks.
+4. Keep the root CNAME file containing wordtopdf.fun.
+5. Commit to the branch used by GitHub Pages.
+6. Wait for deployment, then hard-refresh the website.
+
+VALIDATION
+- 40 HTML pages parsed.
+- 13 active tool pages have an illustration and workspace.
+- 12 homepage tool cards and 13 All Tools cards have icons.
+- No duplicate IDs were introduced.
+- No existing form IDs or script references were removed.
+- No broken local HTML links or asset references found.
+- CSS and SVG parsing passed.
+- JavaScript syntax checks passed.
+
+The browser-based visual rendering could not be completed in this environment.
+Check the deployed pages at desktop and mobile widths after upload.

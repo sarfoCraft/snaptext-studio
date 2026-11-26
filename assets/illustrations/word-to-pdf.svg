@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-label="Word document to PDF illustration">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2878ed" stop-opacity=".20"/><stop offset="1" stop-color="#8b6cf7" stop-opacity=".08"/></linearGradient>
+  <linearGradient id="doc" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#f5f8ff"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="15" stdDeviation="14" flood-color="#253c76" flood-opacity=".15"/></filter>
+</defs>
+<rect x="58" y="28" width="484" height="304" rx="34" fill="url(#bg)"/>
+<circle cx="300" cy="178" r="118" fill="#fff" opacity=".38"/>
+<g filter="url(#shadow)">
+  <rect x="145" y="76" width="170" height="214" rx="18" fill="url(#doc)" stroke="#dce6fb" stroke-width="2"/>
+  <path d="M180 128h95M180 154h95M180 180h70M180 206h90" stroke="#b8c8e5" stroke-width="9" stroke-linecap="round"/>
+  <rect x="164" y="96" width="43" height="43" rx="10" fill="#2878ed"/>
+  <path d="M174 106h23l-3 22h-18z" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="m177 111 4 12 4-8 4 8 3-12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M330 181h74m-25-25 25 25-25 25" fill="none" stroke="#2878ed" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="408" y="76" width="105" height="214" rx="18" fill="url(#doc)" stroke="#dce6fb" stroke-width="2"/>
+  <rect x="425" y="98" width="70" height="58" rx="12" fill="#fce9e9"/>
+  <path d="M440 111h39l-4 32h-31z" fill="#e64b4b"/>
+  <text x="459.5" y="132" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="800" fill="#fff">PDF</text>
+  <path d="M428 184h65M428 207h65M428 230h52" stroke="#c4d0e4" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="474" cy="270" r="12" fill="#16b982"/><path d="m468 270 4 4 8-9" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

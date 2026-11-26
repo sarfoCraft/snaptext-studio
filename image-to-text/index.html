@@ -47,25 +47,23 @@
       </button>
     </div>
   </header>
-<main id="appHome">
-<section class="hero">
+<main class="tool-page ocr-tool-page" id="appHome"><div class="ocr-tool-layout"><section class="hero">
 <div class="eyebrow"><span class="eyebrow-line"></span> IMAGE TO TEXT OCR WORKSPACE</div>
-<h1>Image to Text (OCR).<br/><span>Extract editable text online.</span></h1>
+<h1>Turn screenshots into <span>editable text.</span></h1>
 <p class="hero-copy">Extract editable text from screenshots, photos and scanned pages. Review the OCR result, make corrections and export it as TXT or PDF.</p>
 <div class="hero-points">
-<span><svg viewBox="0 0 16 16"><path d="m3 8 3.1 3.1L13 4.5"></path></svg> No account needed</span>
-<span><svg viewBox="0 0 16 16"><path d="m3 8 3.1 3.1L13 4.5"></path></svg> Edit before exporting</span>
-<span><svg viewBox="0 0 16 16"><path d="m3 8 3.1 3.1L13 4.5"></path></svg> Works in your browser</span>
+<span><svg viewbox="0 0 16 16"><path d="m3 8 3.1 3.1L13 4.5"></path></svg> No account needed</span>
+<span><svg viewbox="0 0 16 16"><path d="m3 8 3.1 3.1L13 4.5"></path></svg> Edit before exporting</span>
+<span><svg viewbox="0 0 16 16"><path d="m3 8 3.1 3.1L13 4.5"></path></svg> Works in your browser</span>
 </div>
-</section>
-<section aria-label="Image to text workspace" class="workspace">
+<figure class="tool-illustration ocr-tool-illustration"><img alt="" aria-hidden="true" decoding="async" height="360" loading="lazy" src="../assets/illustrations/image-to-text.svg" width="600"/></figure></section><section aria-label="Image to text workspace" class="ocr-workspace-panel"><div class="tool-workspace-kicker"><span aria-hidden="true" class="tool-live-dot"></span> YOUR WORKSPACE</div><div class="tool-page-header ocr-tool-page-header"><div class="section-kicker">IMAGE TO TEXT OCR</div><h2>Image to Text OCR</h2><p>Upload an image, extract its text, and review the result before exporting.</p></div><section aria-label="Image to text workspace" class="workspace">
 <div class="workspace-heading">
 <div>
 <div class="section-kicker">WORKSPACE</div>
 <h2>Let's get your text</h2>
 </div>
 <button class="reset-button" id="resetBtn" type="button">
-<svg aria-hidden="true" viewBox="0 0 20 20"><path d="M3.5 5.5h13M8 5.5V3.8h4v1.7m3.1 0-.6 10.2a1.5 1.5 0 0 1-1.5 1.4H7a1.5 1.5 0 0 1-1.5-1.4L4.9 5.5M8 8.5v5.3m4-5.3v5.3"></path></svg>
+<svg aria-hidden="true" viewbox="0 0 20 20"><path d="M3.5 5.5h13M8 5.5V3.8h4v1.7m3.1 0-.6 10.2a1.5 1.5 0 0 1-1.5 1.4H7a1.5 1.5 0 0 1-1.5-1.4L4.9 5.5M8 8.5v5.3m4-5.3v5.3"></path></svg>
             Start over
           </button>
 </div>
@@ -77,22 +75,22 @@
 <span class="step-number">01</span>
 <div><h3 id="sourceTitle">Add a screenshot</h3><p>Upload, paste, or capture your screen.</p></div>
 </div>
-<span class="panel-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><rect height="16" rx="2.5" width="17" x="3.5" y="4"></rect><circle cx="8.5" cy="9" r="1.5"></circle><path d="m5 17 5-5 3 3 2-2 4 4"></path></svg></span>
+<span class="panel-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="16" rx="2.5" width="17" x="3.5" y="4"></rect><circle cx="8.5" cy="9" r="1.5"></circle><path d="m5 17 5-5 3 3 2-2 4 4"></path></svg></span>
 </div>
 <div aria-label="Choose an image or drop it here" class="dropzone" id="dropzone" role="button" tabindex="0">
 <input accept="image/*" hidden="" id="imageInput" type="file"/>
-<div class="upload-symbol"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16 21V5m0 0-6 6m6-6 6 6"></path><path d="M6 19v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6"></path></svg></div>
+<div class="upload-symbol"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M16 21V5m0 0-6 6m6-6 6 6"></path><path d="M6 19v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6"></path></svg></div>
 <div class="drop-title">Drop your image here</div>
 <div class="drop-subtitle">or <button class="inline-link" id="browseBtn" type="button">browse files</button></div>
 <div class="file-hint">PNG, JPG, WEBP, BMP · Up to 20 MB</div>
 </div>
 <div class="source-actions">
 <button class="secondary-button" id="pasteBtn" type="button">
-<svg aria-hidden="true" viewBox="0 0 20 20"><rect height="12" rx="1.5" width="10" x="5.5" y="5.5"></rect><path d="M8 5.5V4.2A1.2 1.2 0 0 1 9.2 3h2.6A1.2 1.2 0 0 1 13 4.2v1.3M8 10h5m-5 3h5"></path></svg>
+<svg aria-hidden="true" viewbox="0 0 20 20"><rect height="12" rx="1.5" width="10" x="5.5" y="5.5"></rect><path d="M8 5.5V4.2A1.2 1.2 0 0 1 9.2 3h2.6A1.2 1.2 0 0 1 13 4.2v1.3M8 10h5m-5 3h5"></path></svg>
                 Paste image
               </button>
 <button class="secondary-button" id="captureBtn" type="button">
-<svg aria-hidden="true" viewBox="0 0 20 20"><rect height="11" rx="2" width="15" x="2.5" y="4"></rect><path d="m7 17 3-2 3 2M7.5 9.5h5"></path></svg>
+<svg aria-hidden="true" viewbox="0 0 20 20"><rect height="11" rx="2" width="15" x="2.5" y="4"></rect><path d="m7 17 3-2 3 2M7.5 9.5h5"></path></svg>
                 Capture screen
               </button>
 </div>
@@ -118,15 +116,15 @@
 <option value="fra">French</option>
 <option value="deu">German</option>
 </select>
-<svg aria-hidden="true" viewBox="0 0 16 16"><path d="m4 6 4 4 4-4"></path></svg>
+<svg aria-hidden="true" viewbox="0 0 16 16"><path d="m4 6 4 4 4-4"></path></svg>
 </div>
 <label class="enhance-option">
 <input checked="" id="enhanceToggle" type="checkbox"/>
-<span class="custom-check"><svg viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"></path></svg></span>
+<span class="custom-check"><svg viewbox="0 0 16 16"><path d="m3 8 3 3 7-7"></path></svg></span>
 <span><strong>Improve image for better results</strong><small>Light contrast and sharpness adjustment</small></span>
 </label>
 <button class="primary-button ocr-button" disabled="" id="ocrBtn" type="button">
-<span class="button-icon"><svg aria-hidden="true" viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"></circle><path d="m13 13 4 4M6 8.5h5M8.5 6v5"></path></svg></span>
+<span class="button-icon"><svg aria-hidden="true" viewbox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"></circle><path d="m13 13 4 4M6 8.5h5M8.5 6v5"></path></svg></span>
 <span id="ocrBtnText">Extract text from image</span>
 <span class="button-arrow">→</span>
 </button>
@@ -134,7 +132,7 @@
 <div class="progress-top"><span id="progressLabel">Preparing OCR engine…</span><span id="progressPercent">0%</span></div>
 <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
 </div>
-<p class="privacy-note"><svg aria-hidden="true" viewBox="0 0 16 16"><rect height="7" rx="1.5" width="9" x="3.5" y="7"></rect><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"></path></svg> Your image is processed in your browser. It is not uploaded to our server.</p>
+<p class="privacy-note"><svg aria-hidden="true" viewbox="0 0 16 16"><rect height="7" rx="1.5" width="9" x="3.5" y="7"></rect><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"></path></svg> Your image is processed in your browser. It is not uploaded to our server.</p>
 </div>
 </section>
 <!-- Text panel -->
@@ -144,14 +142,14 @@
 <span class="step-number">02</span>
 <div><h3 id="textTitle">Your extracted text</h3><p>Review it, edit it, then export.</p></div>
 </div>
-<span class="panel-icon text-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 4.5h10a2 2 0 0 1 2 2v13h-14v-13a2 2 0 0 1 2-2Z"></path><path d="M8 9h8M8 13h8M8 17h5"></path></svg></span>
+<span class="panel-icon text-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 4.5h10a2 2 0 0 1 2 2v13h-14v-13a2 2 0 0 1 2-2Z"></path><path d="M8 9h8M8 13h8M8 17h5"></path></svg></span>
 </div>
 <div class="editor-toolbar">
 <span class="editor-status" id="editorStatus"><span class="status-dot"></span> Waiting for an image</span>
 <div class="toolbar-actions">
-<button class="tool-button" disabled="" id="cleanTextBtn" type="button"><svg aria-hidden="true" viewBox="0 0 18 18"><path d="M3 5h12M5 9h8M7 13h4"></path><path d="m13.5 11.5 1 1 2-2"></path></svg> Clean</button>
-<button class="tool-button" disabled="" id="copyBtn" type="button"><svg aria-hidden="true" viewBox="0 0 18 18"><rect height="10" rx="1.5" width="8.5" x="6" y="5.5"></rect><path d="M11.5 5.5V4A1.5 1.5 0 0 0 10 2.5H4A1.5 1.5 0 0 0 2.5 4v8A1.5 1.5 0 0 0 4 13.5h2"></path></svg> Copy</button>
-<button class="tool-button" disabled="" id="downloadTxtBtn" type="button"><svg aria-hidden="true" viewBox="0 0 18 18"><path d="M9 2.5v9m0 0 3.5-3.5M9 11.5 5.5 8M3 13v2a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5v-2"></path></svg> .TXT</button>
+<button class="tool-button" disabled="" id="cleanTextBtn" type="button"><svg aria-hidden="true" viewbox="0 0 18 18"><path d="M3 5h12M5 9h8M7 13h4"></path><path d="m13.5 11.5 1 1 2-2"></path></svg> Clean</button>
+<button class="tool-button" disabled="" id="copyBtn" type="button"><svg aria-hidden="true" viewbox="0 0 18 18"><rect height="10" rx="1.5" width="8.5" x="6" y="5.5"></rect><path d="M11.5 5.5V4A1.5 1.5 0 0 0 10 2.5H4A1.5 1.5 0 0 0 2.5 4v8A1.5 1.5 0 0 0 4 13.5h2"></path></svg> Copy</button>
+<button class="tool-button" disabled="" id="downloadTxtBtn" type="button"><svg aria-hidden="true" viewbox="0 0 18 18"><path d="M9 2.5v9m0 0 3.5-3.5M9 11.5 5.5 8M3 13v2a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5v-2"></path></svg> .TXT</button>
 </div>
 </div>
 <div class="editor-wrap">
@@ -172,19 +170,18 @@
 </div>
 <div class="export-area">
 <div class="export-copy">
-<span class="export-icon"><svg aria-hidden="true" viewBox="0 0 22 22"><path d="M5 2.8h8l4 4v12.4H5a1.5 1.5 0 0 1-1.5-1.5V4.3A1.5 1.5 0 0 1 5 2.8Z"></path><path d="M13 3v4h4M7 12h8M7 15h8"></path></svg></span>
+<span class="export-icon"><svg aria-hidden="true" viewbox="0 0 22 22"><path d="M5 2.8h8l4 4v12.4H5a1.5 1.5 0 0 1-1.5-1.5V4.3A1.5 1.5 0 0 1 5 2.8Z"></path><path d="M13 3v4h4M7 12h8M7 15h8"></path></svg></span>
 <div><strong>Ready to make it a PDF?</strong><span>Clean, print-ready document layout.</span></div>
 </div>
 <button class="pdf-button" disabled="" id="pdfBtn" type="button">
-<svg aria-hidden="true" viewBox="0 0 20 20"><path d="M5 2.5h7l3.5 3.5v11A1.5 1.5 0 0 1 14 18.5H5A1.5 1.5 0 0 1 3.5 17V4A1.5 1.5 0 0 1 5 2.5Z"></path><path d="M12 2.5V6h3.5M6.5 12h7m-7 3h5"></path></svg>
+<svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 2.5h7l3.5 3.5v11A1.5 1.5 0 0 1 14 18.5H5A1.5 1.5 0 0 1 3.5 17V4A1.5 1.5 0 0 1 5 2.5Z"></path><path d="M12 2.5V6h3.5M6.5 12h7m-7 3h5"></path></svg>
                 Export PDF <span>↗</span>
 </button>
 </div>
 <div class="pdf-note">PDF export opens your browser's print window. Choose <strong>Save as PDF</strong> to download it.</div>
 </section>
 </div>
-</section>
-</main>
+</section></section></div></main>
 
 <section class="wtd-ad-placement" aria-label="Advertisement" data-ad-placement="image-to-text">
   <div class="wtd-ad-slot" hidden>
