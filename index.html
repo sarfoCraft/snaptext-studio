@@ -2,17 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-<script>
-(function () {
-  var isGitHubProjectPage =
-    window.location.hostname === "sarfocraft.github.io" &&
-    window.location.pathname.indexOf("/snaptext-studio") === 0;
-  var siteBase = isGitHubProjectPage ? "/snaptext-studio/" : "/";
-  var baseElement = document.createElement("base");
-  baseElement.href = siteBase;
-  document.head.appendChild(baseElement);
-})();
-</script>
 <!-- MONETAG IN-PAGE PUSH (BANNER) TAG START
        After approval, paste the exact Monetag tag here, once per page, inside <head>.
        Preserve data-cfasync="false" exactly as supplied.
@@ -23,9 +12,9 @@
   <title>WordToPDF.fun | Free Word to PDF, PDF &amp; OCR Tools</title>
   <meta name="description" content="Convert DOCX Word documents to PDF-ready files and use free online PDF, image and OCR tools with WordToPDF. Browser-based processing, no account required.">
   <link rel="canonical" href="https://wordtopdf.fun/">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preload" as="image" href="assets/images/wordtopdf-icon.png">
-  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="/assets/images/wordtopdf-icon.png">
+  <link rel="stylesheet" href="/assets/css/app.css">
   <meta property="og:site_name" content="WordToPDF">
   <meta property="og:title" content="WordToPDF.fun | Free Word to PDF, PDF &amp; OCR Tools">
   <meta property="og:description" content="Convert DOCX Word documents to PDF-ready files and use free online PDF, image and OCR tools with WordToPDF. Browser-based processing, no account required.">
@@ -37,20 +26,20 @@
 <body>
 <div class="app-shell">
   <header class="topbar">
-    <a href="./" aria-label="WordToPDF home" class="brand" id="logoHome">
-      <span class="brand-mark"><img src="assets/images/wordtopdf-icon.png" alt="" width="38" height="38"></span>
+    <a href="/" aria-label="WordToPDF home" class="brand" id="logoHome">
+      <span class="brand-mark"><img src="/assets/images/wordtopdf-icon.png" alt="" width="38" height="38"></span>
       <span class="brand-name">WordTo<span>PDF</span></span>
     </a>
     <div class="topbar-right">
       <span class="privacy-pill"><span class="privacy-dot"></span>Browser-based processing</span>
-      <a class="top-link" id="navToolsBtn" href="#tools">All tools ↗</a>
+      <a class="top-link" id="navToolsBtn" href="/#tools">All tools ↗</a>
       <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-expanded="false" aria-controls="primaryNavigation">Menu</button>
       <nav class="primary-menu" id="primaryNavigation" aria-label="Primary navigation">
         <ul class="primary-menu-list">
-          <li><a href="#tools">Tools</a></li>
-          <li><a href="articles/">Guides</a></li>
-          <li><a href="about/">About</a></li>
-          <li><a href="contact/">Contact</a></li>
+          <li><a href="/#tools">Tools</a></li>
+          <li><a href="/articles/">Guides</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
       </nav>
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
@@ -61,69 +50,30 @@
 
 <main id="wordtopdf-home">
 <section class="hero home-pdf-hero">
-  <div class="eyebrow"><span class="eyebrow-line"></span> YOUR EVERYDAY DOCUMENT WORKSPACE</div>
-  <h1>Word to PDF,<br><span>made simple.</span></h1>
-  <p class="hero-copy">Convert Word documents, organize PDFs and work with images in one easy online workspace. No complicated setup, just the tools you need.</p>
+  <div class="eyebrow"><span class="eyebrow-line"></span> FREE ONLINE DOCUMENT TOOLS</div>
+  <h1>Word to PDF, made simple.</h1>
+  <p class="hero-copy">Convert DOCX documents to PDF-ready files, organize PDFs, extract text from images and handle everyday document tasks in one browser-based workspace.</p>
   <div class="hero-points">
     <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 8 3.1 3.1L13 4.5"/></svg> No account required</span>
-    <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 8 3.1 3.1L13 4.5"/></svg> Files processed in your browser</span>
-    <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 8 3.1 3.1L13 4.5"/></svg> Free everyday tools</span>
-  </div>
-  <div class="hero-actions">
-    <a class="hero-primary-link" href="#tool-word-pdf">Start converting <span aria-hidden="true">↓</span></a>
-    <a class="hero-secondary-link" href="#tools">Explore all tools <span aria-hidden="true">↗</span></a>
-  </div>
-  <div class="hero-capabilities" aria-label="Available tool categories">
-    <span class="capability-chip"><b>PDF</b> Convert & organize</span>
-    <span class="capability-chip"><b>DOCX</b> Word documents</span>
-    <span class="capability-chip"><b>OCR</b> Extract text</span>
+    <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 8 3.1 3.1L13 4.5"/></svg> Browser-based processing</span>
+    <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 8 3.1 3.1L13 4.5"/></svg> Simple document tools</span>
   </div>
 </section>
 
 <section class="tool-page home-word-pdf" id="tool-word-pdf">
+  
   <div class="tool-page-header">
-    <div class="section-kicker">QUICK CONVERTER <span class="live-dot"></span></div>
-    <h2>Convert Word to PDF</h2>
-    <p>Upload a DOCX file and prepare a PDF in a few clicks.</p>
+    <div class="section-kicker">WORD DOCUMENT CONVERTER</div>
+    <h2>Word to PDF Converter</h2>
+    <p>Convert a DOCX Word document into a print-ready page, then save it as PDF from your browser.</p>
   </div>
-  <div class="tool-page-card home-converter-card">
-    <div class="converter-card-top">
-      <div class="converter-file-mark" aria-hidden="true">
-        <svg viewBox="0 0 32 32"><path d="M8 3.5h10l7 7v18H8z"/><path d="M18 3.5v7h7M12 17h9M12 21h9M12 25h6"/></svg>
-        <span>W</span>
-      </div>
-      <div class="converter-card-title">
-        <strong>Word document to PDF</strong>
-        <span>DOCX <i>→</i> PDF</span>
-      </div>
-      <span class="free-tool-pill">Free tool</span>
-    </div>
-    <label class="file-trigger home-dropzone" id="wordPdfDropzone" for="wordPdfInput" tabindex="0" role="button" aria-describedby="wordPdfHint">
-      <span class="upload-cloud-icon" aria-hidden="true">
-        <svg viewBox="0 0 48 48"><path d="M14 34h-2a8 8 0 0 1-.7-16A13 13 0 0 1 36 15a9 9 0 0 1 1 18h-3"/><path d="M24 38V21m-7 7 7-7 7 7"/></svg>
-      </span>
-      <span class="upload-copy">
-        <strong>Drop your Word file here</strong>
-        <span>or <em>browse files</em> from your device</span>
-      </span>
-      <span class="upload-format">.DOCX</span>
-    </label>
+  <div class="tool-page-card">
+    <label class="file-trigger" for="wordPdfInput">Choose Word document (.docx)</label>
     <input accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" class="tool-file-input" id="wordPdfInput" type="file"/>
-    <div class="file-hint" id="wordPdfHint">DOCX format only <span>•</span> Maximum file size: 25 MB</div>
-    <button class="tool-action home-convert-button" disabled id="wordPdfBtn" type="button">Create PDF <span aria-hidden="true">→</span></button>
-    <div aria-live="polite" class="tool-status" id="wordPdfStatus">Choose a DOCX file to get started.</div>
-    <div class="converter-security-note">
-      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5 16 5v4.7c0 3.7-2.4 6.2-6 7.8-3.6-1.6-6-4.1-6-7.8V5z"/><path d="m7.2 9.8 1.8 1.8 3.8-4"/></svg>
-      <span>Your file is processed in your browser. No account needed.</span>
-    </div>
-    <p class="tool-note home-converter-note">After preparation, your browser's print window opens. Choose <strong>Save as PDF</strong> to finish. Older .DOC files aren't supported.</p>
-  </div>
-  <div class="converter-steps" aria-label="How the converter works">
-    <div><span>1</span><p><strong>Upload</strong><small>Select a DOCX file</small></p></div>
-    <i aria-hidden="true"></i>
-    <div><span>2</span><p><strong>Prepare</strong><small>We format your document</small></p></div>
-    <i aria-hidden="true"></i>
-    <div><span>3</span><p><strong>Save PDF</strong><small>Choose Save as PDF</small></p></div>
+    <div class="file-hint">DOCX only · Recommended maximum file size: 25 MB</div>
+    <button class="tool-action" disabled id="wordPdfBtn" type="button">Create PDF <span>→</span></button>
+    <div aria-live="polite" class="tool-status" id="wordPdfStatus">Choose a DOCX file to begin. Your file is processed in this browser.</div>
+    <p class="tool-note">When the print window opens, select <strong>Save as PDF</strong> as the destination. Check page breaks, tables and images before saving. Older .DOC files are not supported.</p>
   </div>
 </section>
 
@@ -138,27 +88,22 @@
 </section>
 
 <section class="home-more-tools" id="tools" aria-labelledby="homeMoreToolsTitle">
-  <div class="tool-section-heading">
-    <div>
-      <div class="section-kicker">THE WORDTOPDF TOOLKIT</div>
-      <h2 id="homeMoreToolsTitle">Everything you need for everyday files</h2>
-      <p class="home-more-tools-copy">Pick a task to get started. No software installation required.</p>
-    </div>
-    <span class="tool-count-pill">12 useful tools</span>
-  </div>
+  <div class="section-kicker">WORDTOPDF TOOLKIT</div>
+  <h2 id="homeMoreToolsTitle">More tools for your documents</h2>
+  <p class="home-more-tools-copy">Choose a tool and process your files in your browser.</p>
   <div class="home-tool-links">
-    <a class="home-tool-link" href="pdf-to-word/"><span class="home-tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h5M9 12h6M9 16h6"/></svg></span><span class="home-tool-card-copy"><strong>PDF to Word</strong><span>Extract text into an editable DOCX</span></span><span class="home-tool-arrow" aria-hidden="true">↗</span></a>
-    <a class="home-tool-link" href="pdf-to-images/"><span class="home-tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="9" cy="9" r="1.5"/><path d="m5 17 5-5 3 3 2-2 4 4"/></svg></span><span class="home-tool-card-copy"><strong>PDF to Images</strong><span>Export PDF pages as PNG files</span></span><span class="home-tool-arrow" aria-hidden="true">↗</span></a>
-    <a class="home-tool-link" href="images-to-pdf/"><span class="home-tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="12" height="15" rx="2"/><path d="m5 15 3-3 2 2 2-2 3 3M16 8h5v13H8v-2"/></svg></span><span class="home-tool-card-copy"><strong>Images to PDF</strong><span>Combine images into one PDF</span></span><span class="home-tool-arrow" aria-hidden="true">↗</span></a>
-    <a class="home-tool-link" href="merge-pdf/"><span class="home-tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h8l3 3v5M13 4v4h4M5 4v16h8M16 14v7M12.5 17.5h7"/></svg></span><span class="home-tool-card-copy"><strong>Merge PDF</strong><span>Join multiple PDF files</span></span><span class="home-tool-arrow" aria-hidden="true">↗</span></a>
-    <a class="home-tool-link" href="split-pdf/"><span class="home-tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h8l4 4v3M13 3v5h5M5 3v18h5M15 13l-3 3 3 3M19 13l3 3-3 3"/></svg></span><span class="home-tool-card-copy"><strong>Split PDF</strong><span>Extract selected PDF pages</span></span><span class="home-tool-arrow" aria-hidden="true">↗</span></a>
-    <a class="home-tool-link" href="compress-pdf/"><span class="home-tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3H4v4M4 3l6 6M16 3h4v4m0-4-6 6M8 21H4v-4m0 4 6-6M16 21h4v-4m0 4-6-6"/></svg></span><span class="home-tool-card-copy"><strong>Compress PDF</strong><span>Reduce image-heavy PDF size</span></span><span class="home-tool-arrow" aria-hidden="true">↗</span></a>
-    <a class="home-tool-link" href="image-to-text/"><span class="home-tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span class="home-tool-card-copy"><strong>Image to Text OCR</strong><span>Extract text from screenshots</span></span><span class="home-tool-arrow" aria-hidden="true">↗</span></a>
-    <a class="home-tool-link" href="batch-ocr/"><span class="home-tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="13" height="15" rx="2"/><path d="M8 8h4M8 12h4M17 8h4v13H8v-1"/></svg></span><span class="home-tool-card-copy"><strong>Batch OCR</strong><span>Read text from multiple images</span></span><span class="home-tool-arrow" aria-hidden="true">↗</span></a>
-    <a class="home-tool-link" href="image-converter/"><span class="home-tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m5 17 5-4 3 2 3-3 3 4"/></svg></span><span class="home-tool-card-copy"><strong>Image Converter</strong><span>Convert JPG, PNG and WebP files</span></span><span class="home-tool-arrow" aria-hidden="true">↗</span></a>
-    <a class="home-tool-link" href="background-remover/"><span class="home-tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4v16M6.3 6.3l11.4 11.4"/></svg></span><span class="home-tool-card-copy"><strong>Background Remover</strong><span>Remove plain solid backgrounds</span></span><span class="home-tool-arrow" aria-hidden="true">↗</span></a>
-    <a class="home-tool-link" href="document-scanner/"><span class="home-tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3H3v5M19 3h2v5M3 16v5h5M21 16v5h-5M7 8h10M7 12h10M7 16h6"/></svg></span><span class="home-tool-card-copy"><strong>Document Scanner</strong><span>Crop a page before OCR</span></span><span class="home-tool-arrow" aria-hidden="true">↗</span></a>
-    <a class="home-tool-link" href="qr-code-generator/"><span class="home-tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h2v2h-2zM18 14h2v2h-2zM14 18h6v2h-6z"/></svg></span><span class="home-tool-card-copy"><strong>QR Code Generator</strong><span>Create a QR code from text or URL</span></span><span class="home-tool-arrow" aria-hidden="true">↗</span></a>
+    <a class="home-tool-link" href="/pdf-to-word/"><strong>PDF to Word</strong><span>Extract text into an editable DOCX</span></a>
+    <a class="home-tool-link" href="/pdf-to-images/"><strong>PDF to Images</strong><span>Export PDF pages as PNG files</span></a>
+    <a class="home-tool-link" href="/images-to-pdf/"><strong>Images to PDF</strong><span>Combine images into one PDF</span></a>
+    <a class="home-tool-link" href="/merge-pdf/"><strong>Merge PDF</strong><span>Join multiple PDF files</span></a>
+    <a class="home-tool-link" href="/split-pdf/"><strong>Split PDF</strong><span>Extract selected PDF pages</span></a>
+    <a class="home-tool-link" href="/compress-pdf/"><strong>Compress PDF</strong><span>Reduce image-heavy PDF size</span></a>
+    <a class="home-tool-link" href="/image-to-text/"><strong>Image to Text OCR</strong><span>Extract text from screenshots</span></a>
+    <a class="home-tool-link" href="/batch-ocr/"><strong>Batch OCR</strong><span>Read text from multiple images</span></a>
+    <a class="home-tool-link" href="/image-converter/"><strong>Image Converter</strong><span>Convert JPG, PNG and WebP files</span></a>
+    <a class="home-tool-link" href="/background-remover/"><strong>Background Remover</strong><span>Remove plain solid backgrounds</span></a>
+    <a class="home-tool-link" href="/document-scanner/"><strong>Document Scanner</strong><span>Crop a page before OCR</span></a>
+    <a class="home-tool-link" href="/qr-code-generator/"><strong>QR Code Generator</strong><span>Create a QR code from text or URL</span></a>
   </div>
 </section>
 <section class="home-guides">
@@ -166,35 +111,35 @@
   <h2>Helpful document guides</h2>
   <p class="home-more-tools-copy">Practical explanations for common PDF, Word and OCR tasks.</p>
   <div class="home-guide-grid">
-<article class="home-guide-card"><h3><a href="articles/how-to-convert-pdf-to-word/">How to Convert a PDF to Word Online: A Step-by-Step Guide</a></h3><p>Learn how to convert a text-based or scanned PDF into an editable DOCX file, what to check after conversion, and when OCR is needed.</p><a class="guide-read-more" href="articles/how-to-convert-pdf-to-word/">Read guide ↗</a></article>
-<article class="home-guide-card"><h3><a href="articles/chatgpt-vs-pdf-converter/">ChatGPT vs a PDF to Word Converter: Which Should You Use?</a></h3><p>Understand when an AI assistant is useful for working with PDF content and when a dedicated PDF-to-DOCX converter is the better tool.</p><a class="guide-read-more" href="articles/chatgpt-vs-pdf-converter/">Read guide ↗</a></article>
-<article class="home-guide-card"><h3><a href="articles/ocr-vs-pdf-text-extraction/">OCR vs PDF Text Extraction: Why Some PDFs Cannot Be Edited</a></h3><p>Learn the difference between selectable PDF text and scanned page images, and why OCR is needed to make scanned documents editable.</p><a class="guide-read-more" href="articles/ocr-vs-pdf-text-extraction/">Read guide ↗</a></article>
+<article class="home-guide-card"><h3><a href="/articles/how-to-convert-pdf-to-word/">How to Convert a PDF to Word Online: A Step-by-Step Guide</a></h3><p>Learn how to convert a text-based or scanned PDF into an editable DOCX file, what to check after conversion, and when OCR is needed.</p><a class="guide-read-more" href="/articles/how-to-convert-pdf-to-word/">Read guide ↗</a></article>
+<article class="home-guide-card"><h3><a href="/articles/chatgpt-vs-pdf-converter/">ChatGPT vs a PDF to Word Converter: Which Should You Use?</a></h3><p>Understand when an AI assistant is useful for working with PDF content and when a dedicated PDF-to-DOCX converter is the better tool.</p><a class="guide-read-more" href="/articles/chatgpt-vs-pdf-converter/">Read guide ↗</a></article>
+<article class="home-guide-card"><h3><a href="/articles/ocr-vs-pdf-text-extraction/">OCR vs PDF Text Extraction: Why Some PDFs Cannot Be Edited</a></h3><p>Learn the difference between selectable PDF text and scanned page images, and why OCR is needed to make scanned documents editable.</p><a class="guide-read-more" href="/articles/ocr-vs-pdf-text-extraction/">Read guide ↗</a></article>
 
   </div>
-  <p><a class="section-link" href="articles/">Browse all guides ↗</a></p>
+  <p><a class="section-link" href="/articles/">Browse all guides ↗</a></p>
 </section>
 </main>
   <footer class="footer">
-    <a href="./" class="brand footer-brand" id="footerLogo">
-      <span class="brand-mark"><img src="assets/images/wordtopdf-icon.png" alt="" width="28" height="28"></span>
+    <a href="/" class="brand footer-brand" id="footerLogo">
+      <span class="brand-mark"><img src="/assets/images/wordtopdf-icon.png" alt="" width="28" height="28"></span>
       <span class="brand-name">WordTo<span>PDF</span></span>
     </a>
     <span>Free online PDF, image and OCR tools.</span>
     <nav class="footer-links" aria-label="Footer navigation">
-      <a href="#tools">Tools</a>
-      <a href="articles/">Guides</a>
-      <a href="about/">About</a>
-      <a href="contact/">Contact</a>
-      <a href="privacy-policy/">Privacy</a>
-      <a href="terms/">Terms</a>
+      <a href="/#tools">Tools</a>
+      <a href="/articles/">Guides</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+      <a href="/privacy-policy/">Privacy</a>
+      <a href="/terms/">Terms</a>
     </nav>
     <span class="footer-right">&copy; 2026 WordToPDF</span>
   </footer>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script>window.WordToPDFConfig={brand:"WordToPDF",homeUrl:new URL("./",document.baseURI).href,ocrUrl:new URL("image-to-text/",document.baseURI).href,pdfWorkerUrl:"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"};</script>
+<script>window.WordToPDFConfig={brand:"WordToPDF",homeUrl:"/",ocrUrl:"/image-to-text/",pdfWorkerUrl:"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"};</script>
 <script src="https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js" defer crossorigin="anonymous"></script>
-<script src="assets/js/runtime.js" defer></script>
-<script src="assets/js/site.js" defer></script>
+<script src="/assets/js/runtime.js" defer></script>
+<script src="/assets/js/site.js" defer></script>
 </body>
 </html>

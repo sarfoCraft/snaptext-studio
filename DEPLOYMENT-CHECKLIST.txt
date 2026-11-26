@@ -32,17 +32,3 @@ AD MONETIZATION CHECKLIST
 [ ] Test with ad blockers disabled on desktop and mobile.
 
 No publisher tags, zone IDs, seller IDs or account credentials are included in this package.
-
-
-GITHUB PAGES PATH FIX
-
-[ ] Extract the ZIP.
-[ ] Upload the ZIP contents to the root of sarfocraft/snaptext-studio.
-[ ] Ensure index.html, assets/, favicon.svg and .nojekyll are at repository root.
-[ ] Commit to the branch used by GitHub Pages.
-[ ] In Settings > Pages, choose Deploy from a branch and /(root).
-[ ] Wait for deployment to finish.
-[ ] Open https://sarfocraft.github.io/snaptext-studio/ and hard-refresh.
-[ ] Verify CSS, logo, navigation and tool pages.
-
-This build detects the GitHub project subpath automatically. Cloudflare Pages and custom domains use the root path automatically.

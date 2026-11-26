@@ -135,77 +135,11 @@
     var button = $('wordPdfBtn');
     if (!input || !button) return;
 
-    var dropzone = $('wordPdfDropzone');
-    var fileHint = $('wordPdfHint');
-
-    function updateWordFileSelection() {
+    input.addEventListener('change', function () {
       var file = input.files && input.files[0];
-      var isDocx = !!(file && /\.docx$/i.test(file.name));
-      var isSmallEnough = !!(file && file.size <= 25 * 1024 * 1024);
-      var valid = !!(file && isDocx && isSmallEnough);
-      button.disabled = !valid;
-
-      if (dropzone) dropzone.classList.toggle('has-file', !!file);
-      if (fileHint) {
-        fileHint.textContent = !file
-          ? 'DOCX format only • Maximum file size: 25 MB'
-          : (isDocx && isSmallEnough ? file.name + ' • Ready to convert' :
-            (!isDocx ? 'Please choose a .DOCX file.' : 'This file is larger than 25 MB.'));
-      }
-
-      if (!file) {
-        status('wordPdfStatus', 'Choose a DOCX file to get started.');
-      } else if (!isDocx) {
-        status('wordPdfStatus', 'This converter accepts DOCX files only.', 'error');
-      } else if (!isSmallEnough) {
-        status('wordPdfStatus', 'Your file is larger than the 25 MB limit.', 'error');
-      } else {
-        status('wordPdfStatus', file.name + ' selected. Ready to convert.');
-      }
-    }
-
-    input.addEventListener('change', updateWordFileSelection);
-
-    if (dropzone) {
-      dropzone.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          input.click();
-        }
-      });
-
-      ['dragenter', 'dragover'].forEach(function (eventName) {
-        dropzone.addEventListener(eventName, function (event) {
-          event.preventDefault();
-          event.stopPropagation();
-          dropzone.classList.add('is-dragging');
-        });
-      });
-
-      ['dragleave', 'dragend'].forEach(function (eventName) {
-        dropzone.addEventListener(eventName, function (event) {
-          event.preventDefault();
-          event.stopPropagation();
-          dropzone.classList.remove('is-dragging');
-        });
-      });
-
-      dropzone.addEventListener('drop', function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        dropzone.classList.remove('is-dragging');
-        var droppedFiles = event.dataTransfer && event.dataTransfer.files;
-        if (!droppedFiles || !droppedFiles.length) return;
-        try {
-          var transfer = new DataTransfer();
-          transfer.items.add(droppedFiles[0]);
-          input.files = transfer.files;
-        } catch (error) {
-          input.files = droppedFiles;
-        }
-        input.dispatchEvent(new Event('change', { bubbles: true }));
-      });
-    }
+      button.disabled = !file;
+      status('wordPdfStatus', file ? file.name + ' selected. Ready to convert.' : 'Choose a DOCX file to begin.');
+    });
 
     button.addEventListener('click', async function () {
       var file = input.files && input.files[0];

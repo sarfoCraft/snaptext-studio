@@ -879,14 +879,14 @@ a.tool-card {
 html {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden !important;
+  overflow-x: clip !important;
 }
 body {
   position: relative;
   left: 0;
   width: 100% !important;
   max-width: 100% !important;
-  overflow-x: hidden !important;
+  overflow-x: clip !important;
 }
 .app-shell {
   width: 100% !important;
@@ -1683,3 +1683,134 @@ body {
 .home-pdf-hero + .tool-page .tool-page-header .section-kicker {
   display: flex;
 }
+
+
+/* =========================================================
+   WORDTOPDF SITE-WIDE PAGE CONSISTENCY UPDATE v1.4
+   Applies to all active pages that load assets/css/app.css.
+   ========================================================= */
+
+/* Prevent horizontal overflow without breaking position: sticky. */
+html,
+body {
+  overflow-x: clip !important;
+}
+
+html {
+  scroll-padding-top: 92px;
+}
+
+/* Keep the header visible while scrolling on desktop and mobile. */
+.topbar {
+  position: sticky !important;
+  position: -webkit-sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  isolation: isolate;
+  width: 100%;
+  background: color-mix(in srgb, var(--bg) 94%, transparent) !important;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+/* Make sure no parent clips the sticky navigation. */
+.app-shell {
+  overflow: visible !important;
+}
+
+/* Anchor links should stop below the sticky header. */
+main[id],
+section[id],
+article[id] {
+  scroll-margin-top: 92px;
+}
+
+/* Shared heading layout across PDF tools and content pages. */
+.tool-page-header,
+.wp-content-header {
+  text-align: left !important;
+  margin-bottom: 28px;
+  min-width: 0;
+}
+
+.tool-page-header h1,
+.wp-content-header h1 {
+  color: var(--ink);
+  font-family: Manrope, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(30px, 3.2vw, 36px) !important;
+  font-weight: 800 !important;
+  line-height: 1.16;
+  letter-spacing: -1.25px !important;
+  margin: 10px 0 9px;
+  overflow-wrap: anywhere;
+}
+
+.tool-page-header p,
+.wp-content-header p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+  max-width: 760px;
+  margin-bottom: 0;
+}
+
+/* Show the page label consistently above tool headings. */
+.tool-page-header .section-kicker,
+.wp-content-header .section-kicker {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  color: var(--purple);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.35px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+/* Keep the homepage hero as designed, while aligning its converter heading. */
+.home-pdf-hero + .tool-page .tool-page-header {
+  text-align: left !important;
+  margin-bottom: 20px;
+}
+
+.home-pdf-hero + .tool-page .tool-page-header .section-kicker {
+  display: flex !important;
+}
+
+.home-pdf-hero + .tool-page .tool-page-header h1 {
+  font-size: clamp(24px, 2.3vw, 30px) !important;
+}
+
+/* Prevent long titles and descriptions from causing horizontal overflow. */
+.tool-page-header,
+.wp-content-header {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    position: sticky !important;
+    position: -webkit-sticky !important;
+    top: 0 !important;
+    min-height: 64px;
+  }
+
+  .tool-page-header,
+  .wp-content-header {
+    margin-bottom: 22px;
+  }
+
+  .tool-page-header h1,
+  .wp-content-header h1 {
+    font-size: clamp(28px, 7vw, 33px) !important;
+    letter-spacing: -1.05px !important;
+  }
+
+  .home-pdf-hero + .tool-page .tool-page-header h1 {
+    font-size: 25px !important;
+  }
+}
+
