@@ -1,7 +1,61 @@
-**SnapText Studio | Free Online PDF, OCR & Image Tools**
+# WordToPDF Cloudflare Pages Website
 
-SnapText Studio offers free online tools to convert, merge, split and compress PDFs, extract text from images using OCR, convert image formats, remove backgrounds and generate QR codes. Fast, easy to use, and no signup required.
+This is the static-site conversion of the supplied SnapText Studio WordPress theme, rebranded as WordToPDF.
 
-**Website:** https://sarfocraft.github.io/snaptext-studio/
+## What is included
 
-**SEO Keywords / GitHub Topics:** pdf-tools, ocr, image-to-text, pdf-converter, image-converter, free-online-tools, pdf-compressor, pdf-merger, pdf-splitter, background-remover, qr-code-generator, online-image-tools
+- Static homepage with Word to PDF as the primary tool.
+- 13 tool pages: Word to PDF, PDF to Word, PDF to Images, Images to PDF, Merge PDF, Split PDF, Compress PDF, Image to Text OCR, Batch OCR, Image Converter, Background Remover, Document Scanner and QR Code Generator.
+- About page, Articles & Guides index, four starter articles, Privacy Policy, Terms and Contact pages.
+- Rebranded CSS, logo/icon, dark-mode toggle, responsive navigation.
+- Static SEO titles, descriptions, canonical links, Open Graph tags, Schema.org JSON-LD, robots.txt and sitemap.xml.
+- Cloudflare Pages `_headers` and `_redirects`.
+
+## Important source audit note
+
+The uploaded ZIP contained the WordPress theme and PHP tool interfaces, but did not contain the companion Runtime plugin or its local JavaScript libraries. The browser-side runtime in this package was reconstructed from the runtime package created in the previous step. The CDN library URLs are pinned to specific versions. This is not a byte-for-byte recovery of the missing original plugin.
+
+## Tool limitations
+
+- Word to PDF: DOCX only. Converts DOCX to browser-rendered HTML, then opens the print dialog. The visitor chooses Save as PDF. Older DOC files are not supported, and complex layouts may differ.
+- PDF to Word: extracts selectable text and uses OCR for scanned pages. Complex layout may not be preserved.
+- Compress PDF: rasterises pages, which can make text non-selectable and may not reduce every file.
+- Background Remover: works best on plain, single-colour backgrounds, not general AI subject segmentation.
+- OCR: recognition can contain errors. Review names, numbers and important text.
+- Selected files are processed in the browser by the supplied runtime. The site does not include a WordToPDF file-upload server or account/database system.
+- Third-party libraries and OCR language data are loaded from pinned public CDNs. CDN providers may receive normal request metadata. Review the privacy policy and library terms before launch.
+
+## Deploy to Cloudflare Pages using GitHub
+
+1. Extract this ZIP on your computer.
+2. Create a new GitHub repository, for example `wordtopdf`.
+3. Upload the **contents** of this folder to the repository root. `index.html`, `assets/`, `_headers` and `_redirects` must be at the root, not inside an extra nested folder.
+4. In Cloudflare Dashboard, open **Workers & Pages** and choose **Create application** > **Pages** > **Connect to Git**.
+5. Connect GitHub and select the `wordtopdf` repository.
+6. Choose **None** as the framework preset.
+7. Leave the build command empty. Set the build output directory to `.` (the repository root).
+8. Deploy.
+9. In the Pages project, open **Custom domains** and add `wordtopdf.fun` and `www.wordtopdf.fun` if you want both.
+10. In Cloudflare DNS, follow the domain setup prompts. Keep the domain's nameservers pointed to Cloudflare if Cloudflare is already managing DNS.
+11. Test the homepage, every tool page, mobile layout and file conversions over HTTPS.
+
+## Before public launch
+
+- Replace the contact placeholder with a real support email.
+- Review and update Privacy Policy and Terms to match your location, actual services, ad networks and analytics.
+- Do not add ad scripts until the privacy and consent setup is appropriate for the visitors you target.
+- Test each tool with sample files on desktop and mobile.
+- Submit `https://wordtopdf.fun/sitemap.xml` to Google Search Console after the site is live.
+- This build has not been deployed to your Cloudflare account. It is prepared for deployment, but the live domain/DNS setup must be completed in your account.
+
+
+## Advertising setup
+
+This build includes optional ad placements, but no live network tags are installed yet.
+
+- Adsterra: one 300 x 250 banner placeholder per monetized page.
+- Monetag: one In-Page Push (Banner) tag placeholder in the head of monetized pages. This is a native on-page banner, not a fixed rectangular display slot.
+- Privacy Policy and Terms of Use include starter disclosures for the two networks.
+- `ads.txt` is a comments-only placeholder until real seller records are provided by the networks.
+
+Read `ADS-SETUP-GUIDE.md` before inserting any publisher tags. Unique account tags, zone IDs and seller records cannot be generated by this package. Do not use invented IDs. The starter policy is not legal advice or a certified consent-management platform.

@@ -1,0 +1,4 @@
+# WordToPDF ads.txt
+# No advertising seller records are active in this package yet.
+# After approval, paste the exact ads.txt records supplied by Adsterra and/or Monetag below.
+# Never guess or invent a publisher ID, seller ID, account type, or certification ID.
