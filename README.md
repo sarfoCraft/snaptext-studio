@@ -10,7 +10,7 @@ A static, browser-based document tools website branded as WordToPDF. The site is
 - Articles and Guides section with seven articles.
 - Responsive layout, theme toggle, tool navigation and sticky-header styling.
 - SEO titles, descriptions, canonical URLs, Open Graph metadata, Schema.org JSON-LD, `robots.txt` and `sitemap.xml`.
-- Optional Adsterra and Monetag placeholders, plus `ADS-SETUP-GUIDE.md`.
+- One Adsterra 300 × 250 banner on 19 selected pages, with ad-free legal and 404 pages. See `AD-PLACEMENT-AUDIT.md` and `ADS-SETUP-GUIDE.md`.
 - `.nojekyll` for GitHub Pages. `_headers` and `_redirects` are retained for Cloudflare Pages compatibility.
 
 ## Deploy to GitHub Pages
@@ -59,8 +59,9 @@ The two CSS files and two runtime files have different content and different pag
 - Review Privacy Policy and Terms so they accurately describe your services, location, ad networks and analytics.
 - Test every tool with sample files on desktop and mobile.
 - Submit `https://wordtopdf.fun/sitemap.xml` to Google Search Console after the custom domain is live.
-- Add real ad tags only after the networks approve the website and provide your actual zone IDs and seller records. Do not invent IDs.
-- Review `ADS-SETUP-GUIDE.md` before configuring advertising. The starter policy text is not legal advice or a certified consent-management platform.
+- Confirm the supplied Adsterra 300 × 250 zone is active and approved for `wordtopdf.fun`.
+- Add the exact Adsterra seller record to `ads.txt` when it is provided in the publisher dashboard. Do not invent IDs.
+- Review `ADS-SETUP-GUIDE.md` and `AD-PLACEMENT-AUDIT.md` for the applied placements. The starter policy text is not legal advice or a certified consent-management platform.
 
 ## Source note
 

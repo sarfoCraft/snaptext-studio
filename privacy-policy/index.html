@@ -9,7 +9,7 @@
   <link rel="canonical" href="https://wordtopdf.fun/privacy-policy/">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preload" as="image" href="../assets/images/wordtopdf-icon.png">
-  <link rel="stylesheet" href="../assets/css/app.css">
+  <link rel="stylesheet" href="../assets/css/app.css?v=20261127-adfix1">
   <meta property="og:site_name" content="WordToPDF">
   <meta property="og:title" content="Privacy Policy | WordToPDF">
   <meta property="og:description" content="Learn how WordToPDF&#x27;s browser-based PDF, image and OCR tools process files and use third-party libraries.">
@@ -50,12 +50,12 @@
 <h2>Cookies and analytics</h2>
 <p>This version does not include user accounts, payments or built-in first-party analytics. It displays third-party Adsterra banner advertising on selected tool and guide pages. Advertising providers may process browser and device information as described below. We will update this policy if the providers, tags, formats or purposes change.</p>
 <h2>Advertising and third-party ad partners</h2>
-<p>WordToPDF currently displays third-party <strong>Adsterra</strong> 300 × 250 banner advertisements on the homepage, the main document and image tool pages, the articles listing page, and selected published guides. A Monetag publisher account and verification file may be present, but the floating Monetag tag is not loaded in this website build. Monetag advertising is therefore not currently activated by this version.</p>
+<p>WordToPDF currently displays third-party <strong>Adsterra</strong> 300 × 250 banner advertisements on the homepage, the main document and image tool pages, the articles listing page, and selected published guides. The previous Monetag floating-ad integration and its service worker have been removed from this website build. This version does not load Monetag advertisements.</p>
 <p>When an advertising tag is active, the provider and its advertising partners may collect or receive information directly from your browser, such as your IP address, device and browser information, approximate location derived from your IP address, the page or referrer, ad impressions, clicks and interactions, and identifiers stored in cookies or similar technologies. The exact information, cookies, retention periods and processing purposes depend on the specific tag, ad format, your location and the provider's current practices.</p>
 <p>Such information may be used to deliver and display advertisements, limit repeated ads, measure advertising performance, detect invalid traffic or fraud, and, where permitted, select or personalize advertisements. Advertising providers may share information with advertisers, measurement partners, service providers or other parties as described in their own notices and terms. WordToPDF does not control the independent privacy practices of those providers.</p>
-<p>For more information, review the providers' current notices: <a href="https://adsterra.com/privacy-policy-managed" rel="noopener noreferrer" target="_blank">Adsterra Privacy Policy</a>, <a href="https://adsterra.com/cookies/" rel="noopener noreferrer" target="_blank">Adsterra Cookies Policy</a>, and <a href="https://monetag.com/terms" rel="noopener noreferrer" target="_blank">Monetag Terms</a>. Also review any privacy or cookie notice linked from your Monetag publisher dashboard.</p>
+<p>For more information, review Adsterra's current <a href="https://adsterra.com/privacy-policy-managed" rel="noopener noreferrer" target="_blank">Privacy Policy</a> and <a href="https://adsterra.com/cookies/" rel="noopener noreferrer" target="_blank">Cookies Policy</a>.</p>
 <p>You can manage cookies and similar technologies through your browser settings. Blocking them may affect ad delivery. Where applicable law requires prior consent for non-essential cookies, advertising identifiers or similar technologies, the site owner must configure an appropriate consent-management solution and the ad tags to respect the visitor's choices before enabling the relevant processing. This starter build is <strong>not</strong> a certified consent-management platform and does not, by itself, establish legal compliance.</p>
-<p><strong>Current setup status:</strong> the Adsterra 300 × 250 banner tag supplied by the site owner is installed once per selected page. The ad container remains hidden unless the ad script inserts its iframe, which avoids leaving a large empty ad box when no ad is served. The floating Monetag tag is disabled in this build to avoid covering the page header. The root <code>ads.txt</code> file still contains a placeholder only; the site owner must add the exact seller record supplied by Adsterra. No seller or publisher record has been guessed. This privacy notice is a starter disclosure, not legal advice or a certified consent-management platform.</p>
+<p><strong>Current setup status:</strong> the Adsterra 300 × 250 banner tag supplied by the site owner is installed once per selected page. The ad container remains hidden unless the ad script inserts its iframe, which avoids leaving a large empty ad box when no ad is served. The previous Monetag tag and service worker are removed in this build to avoid intrusive overlays and background ad delivery. The root <code>ads.txt</code> file still contains a placeholder only; the site owner must add the exact seller record supplied by Adsterra. No seller or publisher record has been guessed. This privacy notice is a starter disclosure, not legal advice or a certified consent-management platform.</p>
 <h2>Children and sensitive documents</h2>
 <p>Do not use the tools to process information you are not authorized to handle. Review every output. Avoid processing highly sensitive documents unless you have independently assessed the privacy and security implications of using a browser-based tool and third-party libraries.</p>
 <h2>Contact</h2>
@@ -78,6 +78,6 @@
   </footer>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/site.js?v=20261127-adfix1" defer></script>
 </body>
 </html>

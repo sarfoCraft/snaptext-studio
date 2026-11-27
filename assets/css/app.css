@@ -978,10 +978,12 @@ body {
 
 /* WordToPDF advertising slot: hidden until a real publisher tag is installed */
 .wtd-ad-placement {
+  display: none;
   width: min(100% - 32px, 970px);
   margin: 24px auto 30px;
   clear: both;
 }
+.wtd-ad-placement.is-ad-loaded { display: block; }
 .wtd-ad-slot[hidden] { display: none !important; }
 .wtd-ad-slot {
   box-sizing: border-box;
@@ -1014,7 +1016,13 @@ body {
   align-items: center;
   overflow: hidden;
 }
-.wtd-ad-code iframe,
+.wtd-ad-code iframe {
+  display: block;
+  width: 300px;
+  height: 250px;
+  max-width: 100%;
+  border: 0;
+}
 .wtd-ad-code img,
 .wtd-ad-code ins { max-width: 100%; }
 @media (max-width: 760px) {
@@ -1672,10 +1680,6 @@ body {
 .home-word-pdf .home-dropzone.has-file .upload-cloud-icon {
   color: var(--green);
 }
-.wtd-ad-placement:has(.wtd-ad-slot[hidden]) {
-  display: none;
-}
-
 /* Specificity overrides for the original homepage-only centering rules */
 .home-pdf-hero + .tool-page .tool-page-header {
   text-align: left;

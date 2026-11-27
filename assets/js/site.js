@@ -44,21 +44,73 @@
     });
     menu.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', closeMenu); });
   }
-  // Reveal the banner only after Adsterra inserts its iframe.
-  // This avoids leaving an empty 300 x 250 area when an ad is blocked or unfilled.
-  document.querySelectorAll('.wtd-ad-slot[hidden]').forEach(function (slot) {
+  // Remove the old Monetag service worker if a visitor installed it previously.
+  // This site build uses Adsterra banners only and does not need a service worker.
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(function (registrations) {
+      registrations.forEach(function (registration) {
+        var worker = registration.active || registration.waiting || registration.installing;
+        var scriptUrl = worker && worker.scriptURL;
+        if (!scriptUrl) return;
+        try {
+          var parsedUrl = new URL(scriptUrl, window.location.href);
+          if (parsedUrl.origin === window.location.origin && parsedUrl.pathname === '/sw.js') {
+            registration.unregister();
+          }
+        } catch (error) {}
+      });
+    }).catch(function () {});
+  }
+
+  // Show an ad placement only after the supplied Adsterra tag inserts its iframe.
+  // If the tag is blocked or no ad is returned, remove the hidden placement cleanly.
+  document.querySelectorAll('.wtd-ad-placement .wtd-ad-slot[hidden]').forEach(function (slot) {
+    var placement = slot.closest('.wtd-ad-placement');
     var code = slot.querySelector('.wtd-ad-code');
-    if (!code) return;
-    var observer = new MutationObserver(function () {
-      if (code.querySelector('iframe')) {
-        slot.hidden = false;
-        observer.disconnect();
-      }
-    });
-    observer.observe(code, { childList: true, subtree: true });
-    if (code.querySelector('iframe')) {
+    if (!placement || !code) return;
+
+    var observer = new MutationObserver(function () { revealAd(); });
+    var timeoutId;
+    var finished = false;
+
+    function revealAd() {
+      if (finished) return true;
+      var frame = code.querySelector('iframe');
+      if (!frame) return false;
+
+      if (!frame.hasAttribute('title')) frame.setAttribute('title', 'Advertisement');
+      frame.style.display = 'block';
+      frame.style.maxWidth = '100%';
+      frame.style.border = '0';
       slot.hidden = false;
+      placement.classList.add('is-ad-loaded');
+      finished = true;
       observer.disconnect();
+      if (timeoutId) window.clearTimeout(timeoutId);
+      return true;
     }
+
+    observer.observe(code, { childList: true, subtree: true });
+
+    var adScript = code.querySelector('script[src*="bauval.org/22/"]');
+    if (adScript) {
+      adScript.addEventListener('error', function () {
+        if (finished) return;
+        finished = true;
+        observer.disconnect();
+        if (timeoutId) window.clearTimeout(timeoutId);
+        placement.remove();
+      }, { once: true });
+    }
+
+    timeoutId = window.setTimeout(function () {
+      if (!revealAd()) {
+        finished = true;
+        observer.disconnect();
+        placement.remove();
+      }
+    }, 20000);
+
+    revealAd();
   });
 })();

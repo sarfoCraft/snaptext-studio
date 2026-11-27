@@ -27,11 +27,10 @@ BEFORE PUBLIC LAUNCH
 [ ] Submit https://wordtopdf.fun/sitemap.xml to Google Search Console.
 
 AD MONETIZATION
-[ ] Apply to Adsterra and submit wordtopdf.fun for review.
-[ ] Create the approved banner zone and paste the exact generated tag.
-[ ] Add and verify wordtopdf.fun in Monetag.
-[ ] Create the chosen on-page banner zone and paste the exact generated tag.
-[ ] Add exact seller records to ads.txt only when supplied by the ad networks.
+[ ] Confirm the supplied Adsterra 300x250 zone is active and approved for wordtopdf.fun.
+[ ] The 300x250 tag is already installed once on 19 selected pages in this ZIP.
+[ ] Add the exact Adsterra seller record to ads.txt when supplied by the dashboard.
+[ ] Monetag floating ads and the old Monetag service worker are removed in this build.
 [ ] Review privacy and consent requirements for your visitors.
 [ ] Test the website with ad blockers disabled on desktop and mobile.
 
