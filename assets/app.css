@@ -668,3 +668,7 @@ article[id] {
   }
 }
 
+
+/* Dark-mode logo contrast fix: keep the WordTo wordmark readable in both themes. */
+.brand-name { color: var(--ink) !important; }
+.brand-name span { color: var(--rose) !important; }
