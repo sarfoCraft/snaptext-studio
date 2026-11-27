@@ -44,4 +44,21 @@
     });
     menu.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', closeMenu); });
   }
+  // Reveal the banner only after Adsterra inserts its iframe.
+  // This avoids leaving an empty 300 x 250 area when an ad is blocked or unfilled.
+  document.querySelectorAll('.wtd-ad-slot[hidden]').forEach(function (slot) {
+    var code = slot.querySelector('.wtd-ad-code');
+    if (!code) return;
+    var observer = new MutationObserver(function () {
+      if (code.querySelector('iframe')) {
+        slot.hidden = false;
+        observer.disconnect();
+      }
+    });
+    observer.observe(code, { childList: true, subtree: true });
+    if (code.querySelector('iframe')) {
+      slot.hidden = false;
+      observer.disconnect();
+    }
+  });
 })();
