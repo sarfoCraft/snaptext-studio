@@ -1,0 +1,19 @@
+WORDTOPDF HOSTINGER BANNER FIX
+
+What changed:
+- Added the Hostinger affiliate banner as static HTML on the homepage, tools directory, all 13 main tool pages, the articles listing page and all published article pages.
+- Added the Hostinger CSS link directly in each selected page head. The banner no longer depends on JavaScript to be inserted.
+- Updated the shared site.js cache version across the HTML pages so browsers fetch the latest code.
+- Kept your Hostinger affiliate URL and supplied banner image.
+- On wide desktop screens, the banner uses the right-side gutter without covering the tool. On ordinary desktop and mobile screens, it appears in the page flow after the main content/ad anchor.
+- Kept the existing mobile tool workspace order and all PDF/OCR processing logic unchanged.
+- Updated the Privacy Policy and ad setup notes with an affiliate disclosure.
+
+DEPLOY:
+1. Extract this ZIP.
+2. Open the snaptext-studio-main folder.
+3. Copy ALL of its contents into the root of the connected GitHub repository, overwriting matching files.
+4. Commit and push to the main branch. Cloudflare Pages should deploy automatically.
+5. After deployment, test in a private browser window and hard-refresh (Ctrl+Shift+R).
+
+Do not upload only index.html. This fix updates multiple page files plus the shared CSS/JS and privacy notice.

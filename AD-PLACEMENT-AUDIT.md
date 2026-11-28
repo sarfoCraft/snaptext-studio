@@ -17,6 +17,14 @@
 5. Monetag Push Notifications are not an on-page banner placement. The browser controls notification permission; a visitor must allow notifications before the browser can deliver them.
 6. No fixed or sticky ad container has been added by the site CSS.
 
+## Hostinger affiliate banner
+
+- One Hostinger affiliate banner is shown on the homepage, the tools directory, all 13 main tool pages, the articles listing page and published article pages.
+- Affiliate URL: `https://www.hostinger.com?REFERRALCODE=H2ABSTSARZDJ`
+- Creative: `/assets/images/hostinger-affiliate.webp`
+- The banner is marked as an advertisement and includes an affiliate disclosure. It uses a static HTML placement, so it does not depend on Adsterra or Monetag scripts.
+- On wide desktop screens it uses the right-side gutter. On ordinary desktop and mobile screens it stays in the page flow and does not cover upload, conversion or download controls.
+
 ## Exact zones supplied by the site owner
 
 ### Adsterra

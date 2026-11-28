@@ -132,7 +132,7 @@
     if (!document.querySelector('link[data-hostinger-affiliate-css]')) {
       var css = document.createElement('link');
       css.rel = 'stylesheet';
-      css.href = '/assets/css/hostinger-affiliate.css?v=20261128-1';
+      css.href = '/assets/css/hostinger-affiliate.css?v=20261128-hostingerfix2';
       css.setAttribute('data-hostinger-affiliate-css', '');
       document.head.appendChild(css);
     }
@@ -160,7 +160,7 @@
     image.src = '/assets/images/hostinger-affiliate.webp';
     image.width = 180;
     image.height = 538;
-    image.loading = 'lazy';
+    image.loading = 'eager';
     image.decoding = 'async';
     image.alt = 'Hostinger: Build your website today. Reliable web hosting for your next big idea. Get started.';
     anchor.appendChild(image);
@@ -181,7 +181,7 @@
       var homeAd = document.querySelector('#tool-word-pdf + .wtd-ad-placement');
       var homeTool = document.querySelector('#tool-word-pdf');
       if (homeAd) {
-        homeAd.insertAdjacentElement('afterend', placement);
+        homeAd.insertAdjacentElement('beforebegin', placement);
       } else if (homeTool) {
         homeTool.insertAdjacentElement('afterend', placement);
       } else {
@@ -196,7 +196,7 @@
     }
 
     if (existingAd) {
-      existingAd.insertAdjacentElement('afterend', placement);
+      existingAd.insertAdjacentElement('beforebegin', placement);
     } else {
       main.insertAdjacentElement('afterend', placement);
     }

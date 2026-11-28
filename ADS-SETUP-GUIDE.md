@@ -18,6 +18,14 @@ The Adsterra banner remains on:
 
 Total: 19 pages.
 
+## Hostinger affiliate banner
+
+- One Hostinger affiliate banner is shown on the homepage, the tools directory, all 13 main tool pages, the articles listing page and published article pages.
+- Affiliate URL: `https://www.hostinger.com?REFERRALCODE=H2ABSTSARZDJ`
+- Creative: `/assets/images/hostinger-affiliate.webp`
+- The banner is marked as an advertisement and includes an affiliate disclosure. It uses a static HTML placement, so it does not depend on Adsterra or Monetag scripts.
+- On wide desktop screens it uses the right-side gutter. On ordinary desktop and mobile screens it stays in the page flow and does not cover upload, conversion or download controls.
+
 ## Adsterra zone
 
 - Zone key: `93eeac727905f44a6881f877c04f163a`
