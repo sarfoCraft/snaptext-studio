@@ -44,24 +44,6 @@
     });
     menu.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', closeMenu); });
   }
-  // Remove the old Monetag service worker if a visitor installed it previously.
-  // The current Adsterra display and Monetag In-Page Push tags are separate from the old notification service worker.
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.getRegistrations().then(function (registrations) {
-      registrations.forEach(function (registration) {
-        var worker = registration.active || registration.waiting || registration.installing;
-        var scriptUrl = worker && worker.scriptURL;
-        if (!scriptUrl) return;
-        try {
-          var parsedUrl = new URL(scriptUrl, window.location.href);
-          if (parsedUrl.origin === window.location.origin && parsedUrl.pathname === '/sw.js') {
-            registration.unregister();
-          }
-        } catch (error) {}
-      });
-    }).catch(function () {});
-  }
-
   // Show an ad placement only after the supplied Adsterra tag inserts its iframe.
   // If the tag is blocked or no ad is returned, remove the hidden placement cleanly.
   document.querySelectorAll('.wtd-ad-placement .wtd-ad-slot[hidden]').forEach(function (slot) {

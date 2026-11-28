@@ -20,22 +20,15 @@ Updated: 28 November 2026
 11. Updated the Privacy Policy to disclose that Google Analytics 4 is currently installed on the homepage only.
 12. Corrected a stale comment in the shared ad script so it no longer claims the site uses Adsterra only.
 
-## Advertising integrations preserved
+## Advertising integrations updated
 
--   Adsterra 300 × 250 banner tag: retained on the same 19 selected
-    pages.
--   Monetag In-Page Push (Banner), zone `12364901`: retained on the same
-    19 selected pages.
--   No advertising tag was moved into file upload, conversion, progress
-    or download controls.
--   The Adsterra slot remains hidden until an iframe is inserted; an
-    empty slot is removed after the timeout.
--   No popunder, fake download button, forced redirect or extra ad
-    network tag was added.
--   The old Monetag service worker (`sw.js`, zone `12363986`) remains in
-    the repository only for legacy cleanup; the shared script
-    unregisters that old worker if found. The current In-Page Push tag
-    is separate.
+- Adsterra 300 × 250 banner tag: retained on the same 19 selected pages.
+- Monetag standalone browser Push Notifications, zone `12374210`: installed on active HTML pages.
+- The matching root-level `sw.js` now uses the supplied Monetag domain `3nbf4.com` and zone `12374210`.
+- The old Monetag In-Page Push (Banner) zone `12364901` and old service-worker zone `12363986` have been replaced.
+- The code that unregistered `/sw.js` has been removed so Monetag's push service worker can remain active.
+- Adsterra placements remain inline after the tool workspace or opening content. No advertising tag is inside upload, conversion, progress or download controls.
+- Mobile tool pages now show the working upload/conversion panel before the marketing illustration and supporting copy.
 
 ## Items that still require owner action
 

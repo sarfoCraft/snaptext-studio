@@ -2702,3 +2702,139 @@ article[id] {
 /* Dark-mode logo contrast fix: keep the WordTo wordmark readable in both themes. */
 .brand-name { color: var(--ink) !important; }
 .brand-name span { color: var(--rose) !important; }
+
+
+/* =========================================================
+   MOBILE AD + PDF WORKSPACE FIX, 28 NOV 2026
+   Monetag Push Notifications are handled by the provider's
+   service worker. Adsterra banners remain inline, never fixed.
+   ========================================================= */
+.wtd-ad-placement {
+  width: min(calc(100% - 24px), 970px);
+  margin: 24px auto 30px;
+}
+.wtd-ad-slot {
+  width: min(100%, 300px);
+  min-height: 0;
+  padding: 8px 0;
+}
+.wtd-ad-code {
+  width: 100%;
+  max-width: 300px;
+  min-height: 0;
+  aspect-ratio: 6 / 5;
+}
+.wtd-ad-code iframe {
+  display: block;
+  width: 100% !important;
+  max-width: 300px !important;
+  height: auto !important;
+  aspect-ratio: 6 / 5;
+  border: 0;
+}
+@media (max-width: 680px) {
+  .tool-page:not(.home-word-pdf) {
+    width: calc(100% - 28px);
+    padding: 16px 0 44px;
+  }
+
+  .tool-landing-layout,
+  .ocr-tool-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  /* Show the actual upload/conversion workspace first on mobile. */
+  .tool-landing-layout .tool-workspace-panel,
+  .ocr-tool-layout .ocr-workspace-panel {
+    order: 1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .tool-landing-layout .tool-marketing-panel,
+  .ocr-tool-layout > .hero {
+    order: 2;
+    width: 100%;
+    min-width: 0;
+    padding: 12px 0 0;
+  }
+
+  .tool-marketing-panel .tool-illustration,
+  .ocr-tool-page .hero .tool-illustration {
+    display: none;
+  }
+
+  .tool-marketing-title,
+  .ocr-tool-page .hero h1 {
+    font-size: clamp(28px, 8vw, 36px);
+    line-height: 1.12;
+    letter-spacing: -1.25px;
+  }
+
+  .tool-marketing-copy,
+  .ocr-tool-page .hero .hero-copy {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .tool-marketing-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px 12px;
+    margin-top: 14px;
+  }
+
+  .tool-workspace-panel .tool-page-header {
+    margin-bottom: 15px;
+  }
+
+  .tool-workspace-panel .tool-page-header h1,
+  .ocr-tool-page-header h2 {
+    font-size: clamp(23px, 6.4vw, 27px);
+    line-height: 1.2;
+  }
+
+  .tool-workspace-panel .tool-page-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .ocr-tool-page .workspace {
+    padding: 13px;
+  }
+
+  .ocr-tool-page .panel {
+    padding: 12px;
+  }
+
+  .wtd-ad-placement {
+    width: min(calc(100% - 24px), 320px);
+    margin: 16px auto 22px;
+  }
+
+  .wtd-ad-slot {
+    width: min(100%, 300px);
+    padding: 8px 0;
+  }
+
+  .wtd-ad-code {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 380px) {
+  .tool-page:not(.home-word-pdf) {
+    width: calc(100% - 22px);
+  }
+
+  .tool-workspace-panel .tool-page-card {
+    padding: 13px;
+  }
+
+  .tool-marketing-benefits {
+    grid-template-columns: 1fr;
+  }
+}

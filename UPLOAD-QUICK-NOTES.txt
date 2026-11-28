@@ -1,0 +1,9 @@
+WORDTOPDF.FUN: QUICK UPLOAD NOTES
+
+1. Extract this ZIP.
+2. Open the extracted folder and copy all of its contents into the root of your existing GitHub repository. Do not create an extra nested folder and do not delete the .git folder.
+3. Commit and push the changes. Wait for Cloudflare Pages to deploy.
+4. Test the homepage and one PDF tool on a phone.
+5. Test Monetag Push Notifications only after checking that browser notification permission is allowed or undecided.
+
+This update keeps Adsterra 300x250 banners, replaces the old Monetag In-Page Push with Monetag Push Notifications zone 12374210, updates /sw.js, and improves mobile tool/ad layout.

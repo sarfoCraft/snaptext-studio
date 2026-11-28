@@ -44,8 +44,8 @@ BEFORE PRODUCTION
 
 ADVERTISING NOTES
 - Adsterra 300x250 banner is retained on 19 selected pages.
-- Monetag In-Page Push (Banner), zone 12364901, is retained on the same 19 pages.
-- The old Monetag floating-ad integration and its legacy service worker are not used.
+- Monetag standalone Push Notifications, zone 12374210, are installed on active HTML pages with the matching root-level sw.js service worker.
+- The old In-Page Push zone 12364901 and old service-worker zone 12363986 have been replaced.
 - Do not click your own ads or use artificial traffic.
 - Actual account approval and fill must be checked in the publisher dashboards.
 

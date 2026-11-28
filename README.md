@@ -23,7 +23,7 @@ Do not change the existing Cloudflare build settings unless your project current
 - SEO titles, descriptions, canonical URLs, Open Graph metadata, Schema.org JSON-LD, `robots.txt` and `sitemap.xml`.
 - Cloudflare Pages `_redirects` rules for legacy tool URLs.
 - Cloudflare Pages `_headers`.
-- Adsterra 300 × 250 banner and Monetag In-Page Push (Banner) integrations on 19 selected pages. See `AD-PLACEMENT-AUDIT.md` and `ADS-SETUP-GUIDE.md`.
+- Adsterra 300 × 250 banners on 19 selected pages and Monetag standalone Push Notifications (zone `12374210`) with a root-level service worker. See `AD-PLACEMENT-AUDIT.md` and `ADS-SETUP-GUIDE.md`.
 
 ## Safe deployment workflow
 
@@ -61,8 +61,8 @@ See `DEPLOYMENT-CHECKLIST.txt` for the full checklist.
 ## Advertising
 
 - Adsterra 300 × 250 banner: retained on 19 selected pages.
-- Monetag In-Page Push (Banner), zone `12364901`: retained on the same 19 selected pages.
-- The older Monetag floating-ad integration and its legacy service worker are not used. The old service worker is only unregistered as legacy cleanup.
+- Monetag standalone browser Push Notifications, zone `12374210`: installed on active HTML pages with the matching root-level `sw.js` service worker.
+- The old In-Page Push zone `12364901` and legacy service-worker zone `12363986` have been replaced.
 - No ads are intentionally placed inside upload, conversion, progress or download controls.
 - Actual ad serving, approval, fill rate and dashboard-level settings must be verified by the site owner.
 
