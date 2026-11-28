@@ -1,0 +1,91 @@
+/* WordToPDF Hostinger affiliate banner */
+.wtd-hostinger-placement {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  margin: 26px auto 34px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+.wtd-hostinger-card {
+  width: 160px;
+  max-width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line, #e7e9f2);
+  border-radius: 13px;
+  background: var(--surface, #fff);
+  box-shadow: 0 10px 28px rgba(20, 23, 43, 0.10);
+  text-align: center;
+}
+
+.wtd-hostinger-ad-label {
+  display: block;
+  padding: 7px 8px 6px;
+  color: var(--muted, #7a7f96);
+  background: var(--surface, #fff);
+  font: 700 9px/1.2 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+}
+
+.wtd-hostinger-link {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.wtd-hostinger-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 180 / 538;
+  object-fit: contain;
+}
+
+.wtd-hostinger-disclosure {
+  margin: 7px 8px 9px;
+  color: var(--muted, #7a7f96);
+  font: 400 9px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+@media (min-width: 1800px) and (min-height: 680px) {
+  .wtd-hostinger-placement {
+    position: fixed;
+    top: 270px;
+    right: calc((100vw - 1440px) / 2 - 176px);
+    width: 160px;
+    margin: 0;
+    padding: 0;
+    z-index: 80;
+  }
+}
+
+@media (max-width: 680px) {
+  .wtd-hostinger-placement {
+    margin: 20px auto 26px;
+  }
+
+  .wtd-hostinger-card {
+    width: 140px;
+  }
+
+  .wtd-hostinger-ad-label {
+    font-size: 8px;
+  }
+
+  .wtd-hostinger-disclosure {
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wtd-hostinger-placement,
+  .wtd-hostinger-card {
+    transition: none !important;
+  }
+}
