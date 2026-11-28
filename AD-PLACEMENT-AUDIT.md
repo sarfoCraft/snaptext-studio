@@ -15,7 +15,7 @@ This build uses both networks on 19 selected high-intent pages:
 | Articles listing | 1 | 1 | 1 |
 | About, Contact, Privacy, Terms, 404 | 5 | 0 | 0 |
 | Tools index and legacy `/tools/*` pages | 13 | 0 | 0 |
-| Older non-sitemap articles | 3 | 0 | 0 |
+| Supplemental guides now included in the sitemap | 3 | 0 | 0 |
 
 ## Implementation notes
 
@@ -27,7 +27,7 @@ This build uses both networks on 19 selected high-intent pages:
 6. Adsterra placements stay hidden until the loader inserts an iframe. If no iframe appears within 20 seconds, the empty placement is removed.
 7. The Adsterra iframe is constrained to a maximum width of 300 px and a height of 250 px, with responsive scaling for small screens.
 8. The custom 404 page and legal pages remain ad-free.
-9. The Privacy Policy and setup notes disclose both networks and the new Monetag zone.
+9. The Privacy Policy discloses Adsterra, Monetag and the Google Analytics 4 tag currently installed on the homepage only.
 
 ## Exact zones supplied by the site owner
 

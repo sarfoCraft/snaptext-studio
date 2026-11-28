@@ -21,7 +21,7 @@ Total: 19 selected pages. Each selected page has one Adsterra banner tag and one
 
 - `/about/`, `/contact/`, `/privacy-policy/`, `/terms/`, and `/404.html`.
 - `/tools/` index and legacy duplicate pages under `/tools/*`.
-- Three older, non-sitemap articles.
+- Three supplemental guides now listed in the sitemap.
 
 ## Adsterra zone
 
@@ -57,7 +57,7 @@ The tag is marked `data-cfasync="false"` so Cloudflare Rocket Loader should leav
 
 The root `/ads.txt` file contains comments only because the exact Adsterra seller record was not supplied. Add the seller line exactly as shown in the Adsterra dashboard. Do not guess a publisher ID, seller ID, account type, or certification ID. No Monetag `ads.txt` line has been invented.
 
-The Privacy Policy now discloses Adsterra and Monetag. This starter policy is not legal advice or a certified consent-management platform. Check consent requirements for visitor regions and configure a suitable consent-management solution where required.
+The Privacy Policy now discloses Adsterra, Monetag and the homepage-only Google Analytics 4 tag. This starter policy is not legal advice or a certified consent-management platform. Check consent requirements for visitor regions and configure a suitable consent-management solution where required.
 
 ## Testing checklist
 

@@ -672,3 +672,15 @@ article[id] {
 /* Dark-mode logo contrast fix: keep the WordTo wordmark readable in both themes. */
 .brand-name { color: var(--ink) !important; }
 .brand-name span { color: var(--rose) !important; }
+
+/* Editorial comparison tables used in practical guides. */
+.editorial .table-scroll{max-width:100%;overflow-x:auto;margin:18px 0 24px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.editorial table{width:100%;min-width:520px;border-collapse:collapse;font-size:13px;line-height:1.6}
+.editorial th,.editorial td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.editorial th{font-weight:800;color:var(--ink);background:var(--surface-2)}
+.editorial td{color:var(--ink-2)}
+.editorial tr:last-child td{border-bottom:0}
+.editorial .faq-list details{border-bottom:1px solid var(--line);padding:15px 0}
+.editorial .faq-list summary{cursor:pointer;font-weight:800;font-size:14px;color:var(--ink)}
+.editorial .faq-list details p{margin:10px 0 3px}
+@media(max-width:760px){.editorial .table-scroll{margin-right:-2px}.editorial table{font-size:12px}.editorial th,.editorial td{padding:10px}}

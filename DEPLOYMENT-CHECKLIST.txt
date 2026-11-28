@@ -1,41 +1,56 @@
-WORDTOPDF DEPLOYMENT CHECKLIST
+WORDTOPDF.FUN DEPLOYMENT CHECKLIST
+TARGET: CLOUDFLARE PAGES
 
-GITHUB PAGES (current setup)
-[ ] Extract the ZIP.
-[ ] Upload the ZIP contents to the root of sarfocraft/snaptext-studio.
-[ ] In GitHub Settings > Pages, select Deploy from a branch.
-[ ] Select branch main and folder / (root).
-[ ] Wait for the deployment workflow to finish.
-[ ] Open https://sarfocraft.github.io/snaptext-studio/ and hard-refresh.
-[ ] Test the homepage, every current tool, legacy /tools/ links, articles and mobile layout.
-[ ] If using wordtopdf.fun, add it in Settings > Pages > Custom domain.
-[ ] Set Cloudflare DNS records to the exact values GitHub Pages provides.
-[ ] Confirm HTTPS and redirects work.
+BEFORE UPLOADING
+[ ] Download and extract WordToPDF-SEO-Updated-Source.zip.
+[ ] Create a backup branch from the current production branch in GitHub.
+[ ] Keep the extracted files' folder structure intact.
+[ ] Confirm index.html is at the repository root, not inside an extra nested folder.
+[ ] Do not upload the ZIP file itself.
 
-CLOUDFLARE PAGES (alternative hosting)
-[ ] Connect the GitHub repository to Cloudflare Pages.
-[ ] Framework preset: None.
-[ ] Build command: leave blank.
-[ ] Build output directory: .
-[ ] Deploy and add wordtopdf.fun under Custom domains.
-[ ] Test all pages and tools over HTTPS.
+GITHUB UPDATE
+[ ] Open the repository in GitHub Desktop (recommended).
+[ ] Switch to a new test branch, for example seo-preview.
+[ ] Copy the extracted ZIP contents into the cloned repository folder.
+[ ] Allow files to be replaced, but do not delete the .git folder.
+[ ] Review the changed-file list.
+[ ] Commit and push the test branch.
 
-BEFORE PUBLIC LAUNCH
-[ ] Replace contact/support email placeholders.
-[ ] Review Privacy Policy and Terms against actual services and target visitors.
-[ ] Test every converter with sample files on desktop and mobile.
-[ ] Submit https://wordtopdf.fun/sitemap.xml to Google Search Console.
+CLOUDFLARE PAGES PREVIEW
+[ ] Confirm the GitHub repository is connected to the existing Cloudflare Pages project.
+[ ] Keep the current production branch and working build settings unchanged.
+[ ] For a plain static site, expected settings are Framework preset: None, Build command: blank, Build output directory: .
+[ ] Wait for the preview deployment for the test branch.
+[ ] Open the preview URL and check the homepage.
+[ ] Test all 13 tool pages with non-sensitive sample files.
+[ ] Test all 12 legacy /tools/* redirects and confirm they reach the intended current pages.
+[ ] Check /robots.txt and /sitemap.xml.
+[ ] Test all articles and internal links.
+[ ] Test one desktop and one mobile viewport.
+[ ] With ad blockers disabled, verify Adsterra and Monetag load without covering upload, convert or download controls.
+[ ] Confirm no JavaScript errors or broken assets.
 
-AD MONETIZATION
-[ ] Confirm the supplied Adsterra 300x250 zone is active and approved for wordtopdf.fun.
-[ ] The 300x250 tag is already installed once on 19 selected pages in this ZIP.
-[ ] Add the exact Adsterra seller record to ads.txt when supplied by the dashboard.
-[ ] Monetag floating ads and the old Monetag service worker are removed in this build.
-[ ] Review privacy and consent requirements for your visitors.
-[ ] Test the website with ad blockers disabled on desktop and mobile.
+BEFORE PRODUCTION
+[ ] Add a real monitored support/privacy contact email.
+[ ] Add the exact Adsterra seller record to /ads.txt from the dashboard. Do not guess seller IDs.
+[ ] Confirm Adsterra and Monetag zones are active and approved for wordtopdf.fun.
+[ ] Review privacy disclosures and consent requirements for target visitor regions.
+[ ] Test every converter again.
+[ ] Merge the tested branch into the Cloudflare production branch.
+[ ] Wait for the production deployment.
+[ ] Verify https://wordtopdf.fun/ and several tool URLs.
+[ ] Submit https://wordtopdf.fun/sitemap.xml in Google Search Console.
+[ ] Use URL Inspection for the homepage, main tool pages and a few updated articles.
 
-NOTES
-- This is a static browser-side website. It does not include WordPress, PHP, MySQL,
-  accounts, payments, server-side conversion or file storage.
-- No publisher tags, zone IDs, seller IDs or account credentials are included.
-- Read ADS-SETUP-GUIDE.md before installing advertising tags.
+ADVERTISING NOTES
+- Adsterra 300x250 banner is retained on 19 selected pages.
+- Monetag In-Page Push (Banner), zone 12364901, is retained on the same 19 pages.
+- The old Monetag floating-ad integration and its legacy service worker are not used.
+- Do not click your own ads or use artificial traffic.
+- Actual account approval and fill must be checked in the publisher dashboards.
+
+IMPORTANT
+- Do not follow the old GitHub Pages deployment instructions that may appear in legacy project notes.
+- This package targets Cloudflare Pages.
+- Do not deploy directly to production before preview testing.
+- This package has not yet been deployed or tested in your live Cloudflare account.

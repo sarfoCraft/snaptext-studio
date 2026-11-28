@@ -45,7 +45,7 @@
     menu.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', closeMenu); });
   }
   // Remove the old Monetag service worker if a visitor installed it previously.
-  // This site build uses Adsterra banners only and does not need a service worker.
+  // The current Adsterra display and Monetag In-Page Push tags are separate from the old notification service worker.
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.getRegistrations().then(function (registrations) {
       registrations.forEach(function (registration) {
