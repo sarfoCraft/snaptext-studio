@@ -44,8 +44,9 @@
     });
     menu.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', closeMenu); });
   }
-  // Show an ad placement only after the supplied Adsterra tag inserts its iframe.
-  // If the tag is blocked or no ad is returned, remove the hidden placement cleanly.
+
+  // Show an Adsterra placement only after its tag inserts an iframe.
+  // If the tag is blocked or no ad is returned, remove the empty slot.
   document.querySelectorAll('.wtd-ad-placement .wtd-ad-slot[hidden]').forEach(function (slot) {
     var placement = slot.closest('.wtd-ad-placement');
     var code = slot.querySelector('.wtd-ad-code');
@@ -95,4 +96,111 @@
 
     revealAd();
   });
+
+  // One Hostinger affiliate banner on the homepage, tool pages and guide pages.
+  // Legal, contact, about and 404 pages are intentionally excluded.
+  function addHostingerAffiliatePlacement() {
+    var path = (window.location.pathname || '/')
+      .replace(/\/index\.html$/i, '/')
+      .replace(/\/?$/, '/');
+
+    var toolPaths = [
+      '/word-to-pdf/',
+      '/pdf-to-word/',
+      '/pdf-to-images/',
+      '/images-to-pdf/',
+      '/merge-pdf/',
+      '/split-pdf/',
+      '/compress-pdf/',
+      '/image-to-text/',
+      '/batch-ocr/',
+      '/image-converter/',
+      '/background-remover/',
+      '/document-scanner/',
+      '/qr-code-generator/'
+    ];
+
+    var isHome = path === '/';
+    var isTool = toolPaths.indexOf(path) !== -1;
+    var isToolsDirectory = path === '/tools/';
+    var isArticlesIndex = path === '/articles/';
+    var isArticle = /^\/articles\/[^/]+\/$/.test(path);
+
+    if (!isHome && !isTool && !isToolsDirectory && !isArticlesIndex && !isArticle) return;
+    if (document.querySelector('.wtd-hostinger-placement')) return;
+
+    if (!document.querySelector('link[data-hostinger-affiliate-css]')) {
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = '/assets/css/hostinger-affiliate.css?v=20261128-1';
+      css.setAttribute('data-hostinger-affiliate-css', '');
+      document.head.appendChild(css);
+    }
+
+    var placement = document.createElement('aside');
+    placement.className = 'wtd-hostinger-placement';
+    placement.setAttribute('aria-label', 'Hostinger affiliate advertisement');
+
+    var card = document.createElement('div');
+    card.className = 'wtd-hostinger-card';
+
+    var label = document.createElement('span');
+    label.className = 'wtd-hostinger-ad-label';
+    label.textContent = 'Advertisement';
+
+    var anchor = document.createElement('a');
+    anchor.className = 'wtd-hostinger-link';
+    anchor.href = 'https://www.hostinger.com?REFERRALCODE=H2ABSTSARZDJ';
+    anchor.target = '_blank';
+    anchor.rel = 'sponsored nofollow noopener noreferrer';
+    anchor.setAttribute('aria-label', 'Visit Hostinger using our affiliate link, opens in a new tab');
+
+    var image = document.createElement('img');
+    image.className = 'wtd-hostinger-image';
+    image.src = '/assets/images/hostinger-affiliate.webp';
+    image.width = 180;
+    image.height = 538;
+    image.loading = 'lazy';
+    image.decoding = 'async';
+    image.alt = 'Hostinger: Build your website today. Reliable web hosting for your next big idea. Get started.';
+    anchor.appendChild(image);
+
+    var disclosure = document.createElement('p');
+    disclosure.className = 'wtd-hostinger-disclosure';
+    disclosure.textContent = 'Affiliate link. We may earn a commission at no extra cost to you.';
+
+    card.appendChild(label);
+    card.appendChild(anchor);
+    card.appendChild(disclosure);
+    placement.appendChild(card);
+
+    var main = document.querySelector('main');
+    if (!main) return;
+
+    if (isHome) {
+      var homeAd = document.querySelector('#tool-word-pdf + .wtd-ad-placement');
+      var homeTool = document.querySelector('#tool-word-pdf');
+      if (homeAd) {
+        homeAd.insertAdjacentElement('afterend', placement);
+      } else if (homeTool) {
+        homeTool.insertAdjacentElement('afterend', placement);
+      } else {
+        main.insertAdjacentElement('afterend', placement);
+      }
+      return;
+    }
+
+    var existingAd = main.querySelector('.wtd-ad-placement');
+    if (!existingAd && main.nextElementSibling && main.nextElementSibling.classList.contains('wtd-ad-placement')) {
+      existingAd = main.nextElementSibling;
+    }
+
+    if (existingAd) {
+      existingAd.insertAdjacentElement('afterend', placement);
+    } else {
+      main.insertAdjacentElement('afterend', placement);
+    }
+  }
+
+  addHostingerAffiliatePlacement();
 })();
